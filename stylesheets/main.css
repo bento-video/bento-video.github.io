@@ -233,7 +233,7 @@ img {
   max-width: 800px;
 }
 
-#redpoint-logo {
+#bento-logo {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   color: #ed7164;                     /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
@@ -245,7 +245,7 @@ img {
   z-index: 4;
 }
 
-#redpoint-logo img {
+#bento-logo img {
   width: 50px;                      /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
 }
 
@@ -261,7 +261,7 @@ img {
   filter: invert(100%);
 }
 
-#redpoint-logo:hover {
+#bento-logo:hover {
   filter: contrast(125%) brightness(75%);
 }
 
@@ -299,7 +299,7 @@ img {
 
 /* ---------------------------------
 
-               code                           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+               code                           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
 
 ------------------------------------ */
 
@@ -337,7 +337,7 @@ code.gruvbox-code {
 
 /* ---------------------------------
 
-               nav                            /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+               nav                            /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
 
 ------------------------------------ */
 
@@ -1009,7 +1009,7 @@ small {
 
   /* Logos */
 
-  #redpoint-logo {
+  #bento-logo {
     width: 40px;
     top: 18px;
     right: 15px;
@@ -1254,7 +1254,7 @@ small {
     left: 55%;
   }
 
-  #redpoint-logo {
+  #bento-logo {
     right: 5px;
   }
 
@@ -1272,7 +1272,7 @@ small {
     flex-wrap: wrap;
   }
 
-  #redpoint-logo {
+  #bento-logo {
     width: 28px;
     right: 12px;
   }
