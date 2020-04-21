@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="en-US" prefix="og: http://opg.me/ns#">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="title" property="og:title" content="RedPoint" />
+
+  <meta name="description" property="og:description"
+    content="RedPoint is a web-based, multi-language computational notebook for programmers" />
+
+  <meta name="type" property="og:type" content="website" />
+
+  <meta name="url" property="og:url" content="https://redpoint-notebooks.github.io/" />
+
+  <meta name="image" property="og:image" content="images/logos/redpoint-brand-logo_horizontal-on_dark.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="author" content="Charles Ging, Ben Harvey, William Mills" />
+
+  <title>Bento Case Study</title>
+
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon_package_v0.16/favicon-16x16.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <!-- <style>reset</style> -->
+
+  <link rel="stylesheet" href="stylesheets/reset.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css"
+    charset="utf-8" />
+
+  <!-- <style></style> -->
+
+  <link rel="stylesheet" href="stylesheets/main.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="javascripts/main.js"></script>
+
+  <!-- <script></script> -->
+
+  <script src="javascripts/application.js"></script>
+</head>
+
+<body>
+  <div class="logo-links">
+    <p id="redpoint-logo">
+      <img src="./images/logos/bento_logo.png" />
+    </p>
+    <a href="https://github.com/redPoint-notebook/redPoint-notebook" target="_blank">
+      <img src="images/github/github_white.png" alt="github logo" id="github-logo" />
+    </a>
+  </div>
+  <a id="toTop-link" href="#" target="_blank">
+    <img src="images/icons/back-to-top.png" alt="Back to top" id="toTop-logo" />
+  </a>
+  <nav id="site-navigation">
+    <ul>
+      <li>
+        <a href="#home" id="home-link">HOME</a>
+      </li>
+
+      <li>
+        <!-- <a href="#case-study" id="case-study-link">CASE STUDY</a> -->
+
+        <nav id="case-study-mobile">
+          <ul>
+            <li><a href="#case-study" id="case-study-link">CASE STUDY</a></li>
+          </ul>
+        </nav>
+      </li>
+
+      <li>
+        <a href="#our-team" id="our-team-link">OUR TEAM</a>
+      </li>
+
+      <li>
+        <a href="https://www.redpointnotebooks.com/notebooks/243e1bce-6d21-48cf-8e39-5583d4af5e26" id="notebooks-link"
+          target="_blank">TRY DEMO NOTEBOOK</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>
+      <img src="images/logos/bento_logo.png" alt="RedPoint Logo" />
+      <p>a blazing fast video transcoding pipeline</p>
+    </h1>
+  </header>
+
+
+  <section class="integration">
+    <div class="integration-wrapper">
+      <div class="box">
+        <img src="images/gifs/multi_language.gif" alt="Gif of JS, ruby, and python execution in a notebook" />
+      </div>
+
+      <article class="box">
+        <div class="text-box">
+          <h1>High speed video transcoding in the cloud</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis erat non mauris finibus
+            iaculis.
+          </p>
+
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="integration">
+    <div class="integration-wrapper">
+
+      <article class="box">
+        <div class="text-box">
+          <h1>Donec ut feugiat ex.</h1>
+          <p>
+            Proin eu faucibus orci. Maecenas pellentesque eget lacus dapibus facilisis.
+          </p>
+        </div>
+      </article>
+
+      <div class="box">
+        <img src="images/diagrams/intro/mobile-and-sharing.png"
+          alt="Gif of JS, ruby, and python execution in a notebook" />
+      </div>
+    </div>
+  </section>
+
+  <section class="integration">
+    <div class="integration-wrapper">
+
+      <div class="box" id="api-webhook-support">
+        <img src="images/diagrams/intro/webhooks-api-support.png" alt="Screenshot of a notebook with API data" />
+      </div>
+
+      <article class="box">
+        <div class="text-box">
+          <h1>Nunc a accumsan lorem.</h1>
+
+          <p>
+            Curabitur odio dolor, venenatis ac dolor at, malesuada placerat nunc. Donec non augue et mi rutrum rutrum
+            non eu magna.
+          </p>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <main>
+    <section id="case-study">
+      <h1>Case Study</h1>
+
+      <div id="side-nav">
+        <img src="images/logos/bento_logo.png" alt="RedPoint Logo" />
+      </div>
+
+      <nav>
+        <ul></ul>
+      </nav>
+
+      <div class="chapter">
+        <h2 id="introduction">1 Introduction</h2>
+
+        <h3>1.1 What is Bento?</h3>
+
+        <p>Bento is a blazing fast serverless video transcoding pipeline that can easily be deployed to Amazon Web
+          Services (AWS). It is built for individuals and small businesses seeking a fast, simple, open-source solution
+          to their video transcoding needs.</p>
+        <p>Converting high-definition videos to new formats and resolutions is a process that can take hours on a single
+          machine. Businesses that serve videos to their users typically turn to video transcoding services, which are
+          expensive, or build their own video transcoding server farms, which are complex and error-prone.</p>
+        <p>By leveraging the instant scale and concurrent execution of function-as-a-service architecture, Bento
+          transcodes hundreds of small parts of a video file in parallel, slashing multi-hour transcoding jobs down to
+          minutes.</p>
+        <p>This case study will outline the approach that we took to developing a serverless solution to video
+          transcoding, and will explore some of the technical challenges of processing large video files in a highly
+          concurrent cloud system. We will conclude by benchmarking Bento against typical competitors to demonstrate the
+          impressive results yielded by taking this approach to video transcoding.</p>
+        <p>To begin, let’s take a step back and discuss what video transcoding is, and why video is among the most
+          compelling challenges in web development. </p>
+        <h3>1.2 Why is video interesting?</h3>
+        <p>Video is ubiquitous on the web. Video-on-demand platforms are billion-dollar businesses. Video dominates
+          social media feeds and internet ads. Yet for all of this, video is often taken for granted. We rarely stop to
+          consider how unique and interesting it is. Last year, video made up around 76% of all internet traffic. With
+          new video-based services and apps launching seemingly every day, video traffic is predicted to grow to over
+          80% of total internet traffic within the next few years</p>
+
+        <p>Video is distinct from most other web traffic because video files tend to be very large; they are usually an
+          order of magnitude larger than images. As a result, video tends to present challenges related to storage,
+          memory, and bandwidth that other types of resources don’t present. In addition, the size of video files is
+          increasing alongside advancing video technologies that allow for higher resolutions and higher frame rates,
+          so these challenges are expected to grow.</p>
+
+        <div class="img-wrapper">
+          <img src="images/diagrams/filesize-scale.png" alt="text and code cells example" />
+        </div>
+
+        <p>Finally, video is complex. Delivering video files over the internet is more complicated than perhaps any
+          other file type. The source of this complexity comes from two major challenges which we will call the
+          compatibility problem and the bandwidth problem. We will delve into these two problems as an introduction to
+          video transcoding and why it is necessary.
+        </p>
+        <h3>1.3 What is video transcoding?</h3>
+        <h4>1.3.1 What is a video file?</h4>
+        <p>To discuss these problems surrounding compatibility and bandwidth, it will be helpful to first explain what a
+          video file is. </p>
+        <p>When a video is first recorded by a phone or camera, the raw video data is too large to store locally, much
+          less to send over the web. For example, an hour of 1080p60fps uncompressed video is around 1.3TB. To bring the
+          size of this raw data down to a more manageable size the data must be compressed. The software that is used to
+          compress this data is called a codec (a combination of the words coder and decoder). A codec applies an
+          algorithm to compress the raw data, encoding it so that it can be easily stored and sent. Once compressed, the
+          data is packaged into a file format, called a container. Containers have extensions you may have seen, like
+          .mp4 or .mov.
+
+          When playing a video this process is reversed. A media player opens the container, and the same codec is used
+          to decode the video data and display it on the device. </p>
+
+        <div class="img-wrapper">
+          <img src="images/diagrams/playback-decoding.png" alt="text and code cells example" />
+          <p>Encoded videos are decoded with the same codec for playback</p>
+        </div>
+
+        <h4>1.3.2 The problem of compatibility</h4>
+        <p>The first problem that businesses face is that there are dozens of different codecs, containers, and video
+          players, each with their own strengths and weaknesses. Unfortunately, they are not all compatible with each
+          other. Using the wrong codec or container could mean that some users can’t play certain videos. Therefore a
+          decision must be made as to which codec and container will be used to package a video.
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/complex-compatibility.png" alt="text and code cells example" />
+          </div>
+
+          <p>Usually this decision
+            will be made based on the characteristics of the codec and the types of devices that a business expects
+            their
+            users to have. Once they have made this decision, they need to convert any video files they have using the
+            codec and container they have decided on. However, now they need to answer a second question: how much
+            should
+            they compress their videos?</p>
+          <div class="img-wrapper">
+            <img src="images/diagrams/compatibility-solution.png" alt="text and code cells example" />
+          </div>
+          <h4>1.3.3 The problem of bandwidth</h4>
+          <p>As we previously stated, video files can be quite large and will usually require some level of compression
+            to
+            decrease their file size in order to deliver them across the web. But what level of compression? </p>
+
+          <p>Generally speaking there is a negative correlation between the level of compression and the quality of the
+            resultant video. The more a video file is compressed, the greater the decrease in visual fidelity. This
+            means
+            that the less a video is compressed, the more of its original quality is preserved and the larger the file
+            size. However, not all users will have the bandwidth to quickly download larger, higher quality files.</p>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/compression-example.png" alt="text and code cells example" />
+            <p>Higher levels of compression diminish video quality. <br> 1080p (top) vs 360p (bottom) </p>
+          </div>
+
+          <p>Consider for instance, the difference in download speed that will be available to a user on a fiber
+            internet
+            connection in their office, and a user on 3G connection going through a subway tunnel as they both attempt
+            to
+            download the same video. The person in their office will have a smooth experience, whereas the person in the
+            tunnel may have a choppy experience, if their video plays at all. </p>
+
+          <p>Variable levels of bandwidth introduce additional complexity into the task of handling video on the web.
+            For
+            this reason, businesses will usually create multiple versions of the same video at different rates of
+            compression, and thus different file sizes. Modern media players detect users’ bandwidth, and deliver the
+            video file most appropriate for speed of their connection. Smaller, more compressed videos will be delivered
+            to users with less available bandwidth, while users with stronger connections will be served higher quality
+            videos.</p>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/variable-bandwidth.png" alt="text and code cells example" />
+          </div>
+          <br><br>
+
+          <h4>1.3.4 Video transcoding and it's own inherent difficulties</h4>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/transcoding-recap.png" alt="text and code cells example" />
+          </div>
+
+          <p>To recap, businesses that deliver video will use a codec to convert their videos into a single container
+            format, compressed to multiple file sizes. This process of conversion is called video transcoding. The
+            process
+            of ingesting a video file and transcoding it to specific formats and file sizes is coordinated and
+            facilitated
+            by a transcoding pipeline.</p>
+
+          <p>Every business that delivers video files on the internet will need to consider how they are going to handle
+            this process of transcoding their videos. Unfortunately, the video transcoding process possesses its own
+            inherent challenges that will need to be addressed when negotiating a transcoding solution.</p>
+
+          <p>First, transcoding large video files takes a very long time. Transcoding a single 60 minute HD video can
+            take
+            anywhere from two to six hours and sometimes more. </p>
+
+          <p>Second, In addition to costs in time, transcoding is demanding on memory and CPU. A video transcoding
+            process
+            will happily eat all the CPU that is thrown at it. Transcoding on a single local machine may be a viable
+            option for individuals only transcoding one of two videos a month. </p>
+
+          <p>However, individuals and businesses with regular video demand will not find this to be a feasible option
+            and
+            will instead utilize a custom in-house transcoding pipeline or some third-party service.</p>
+
+          <h3>1.4 Existing video transcoding solutions</h3>
+
+          <p>Broadly considered, professional video transcoding solutions will fall into two categories: customized
+            solutions that are developed and maintained in-house and third party commercial software.</p>
+
+          <h4>1.4.1 Custom transcoding</h4>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/solution1-tradeoffs.png" alt="text and code cells example" />
+          </div>
+
+          <p>Some businesses choose to build their own video transcoding farm in house. In this case, a development team
+            is needed to write custom software and deploy it to their own bare metal servers or cloud infrastructure
+            (e.g.
+            Amazon EC2, Digital Ocean Droplet). Once deployed, this option is cheaper than third-party software, and it
+            provides business with maximum control over how they transcode their videos. For example, what formats and
+            codecs they support, as well as any additional transformations they want to make to their videos. This
+            option
+            requires technical expertise both to set up and scale.
+          </p>
+
+          <p>There are of course trade-offs to any solution. Video transcoding is both slow and error prone, even with
+            optimizations, and as we’ll see later, provisioning servers for video transcoding can result in periods
+            wherein compute power is going unused.</p>
+
+          <p>Building a custom transcoding farm is well-suited for video platforms such as Netflix and YouTube.
+            Companies
+            that ingest and stream millions of hours of video each week can build their own engineering operations
+            around
+            this task to minimize the trade-offs.</p>
+
+          <h4>1.4.2 Commercial software</h4>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/solution2-tradeoffs.png" alt="text and code cells example" />
+          </div>
+
+          <p>A second solution is to use commercial video transcoding software. Services such as Amazon MediaConvert and
+            Zencoder provide powerful cloud-based transcoding. These services provide comprehensive solutions for
+            businesses that need to support multiple formats, codecs, and devices. Because these services specialize in
+            video, they will be tuned for speed and will be adept at handling the error cases that typically accompany
+            transcoding jobs. However, the number of transcoding options many of these services provide may be overkill
+            for smaller businesses that have fewer input and output requirements. And, as one might expect, these
+            services
+            are going to be a more expensive option.
+          </p>
+          <p>This solution is a good fit for media production studios that produce massive amounts of video content that
+            lands on lots of devices, and don’t want to build their own video engineering companies.</p>
+
+          <h4>1.4.3 Solutions compared</h4>
+          <p>Let’s briefly review the options outlined above.</p>
+
+          <div class="img-wrapper">
+            <img src="images/diagrams/solutions-compared.png" alt="text and code cells example" />
+          </div>
+
+          <p>
+            If you go with private servers, you have the highest level of control over your inputs and outputs. Your
+            bottleneck is technical expertise - to really get the best performance and cost from this model, you need a
+            dedicated video engineering team.
+          </p>
+
+          <p>By contrast, transcoding software outsources your video engineering team. You therefore get the benefits of
+            speed and control, but at a higher cost.</p>
+
+
+          <p>These options are sufficient for some businesses, but there seems to be an opportunity here. Is it possible
+            to build a fast, low-cost transcoding pipeline, suited for businesses that don’t have video expertise and
+            won’t need a plethora of video options? We felt that the answer was yes, and that the solution might lie in
+            serverless technology.</p>
+
+          <h2>2 Toward a serverless Architecture</h2>
+          <p>Bento is “serverless”, but what does that mean? As it turns out, serverless is a bit of an overloaded term
+            and it’s not always clear what exactly is being referred to.</p>
+          <h3>2.1 What is "serverless"?</h3>
+          <p>Serverless originally referred to applications that would outsource the business-logic and state management
+            to third party services. Here, a robust client application interacts with a cloud-hosted backend that is
+            scaled and implemented by some third party. This kind of architecture is sometimes called Backend as a
+            Service
+            (BaaS). You, the developer, bring your client side application and the BaaS service implements the backend
+            for
+            you. </p>
+
+          <p>More often than not however, serverless refers to a related but distinct architecture called Function as a
+            service, or FaaS.</p>
+
+          <h3>2.2 Function as a Service</h3>
+          <p>The FaaS provider that we use for Bento is AWS Lambda. A concise overview of Lambda and FaaS more generally
+            can be found on the AWS Lambda homepage:</p>
+          <blockquote>
+            <p>
+              AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time
+              you consume.
+
+              With Lambda, you can run code for virtually any type of application or backend service - all with zero
+              administration. Just upload your code and Lambda takes care of everything required to run and scale your
+              code with high availability. You can set up your code to automatically trigger from other AWS services or
+              call it directly from any web or mobile app.
+            </p>
+          </blockquote>
+          <h4>2.2.1 What is FaaS</h4>
+          <p>Function as a service (FaaS) is similar to BaaS in that there are no server applications to run ourselves
+            and
+            the client is interacting with a cloud-hosted backend that is managed by a third party.
+          </p>
+
+          <p>However in contrast to BaaS, when using a FaaS service, you are only responsible for implementing the
+            business logic of a function Your code is deployed to and executed by a FaaS provider which takes care of
+            provisioning necessary environment and resources to run your code, as well as scaling the execution of your
+            function as needed.</p>
+
+          <p>The key features of FaaS are:
+            <ul>
+              <li>Code is executed in response to an event, which may be a request from the client, or an event or
+                direct
+                invocation within the backend. </li>
+              <li>The code is run within ephemeral and stateless containers. Lambda will create these containers to
+                execute code and immediately destroy them once they have finished executing. </li>
+              <li>These containers are stateless. Data does not persist within containers between function executions,
+                and
+                data cannot directly pass between functions executing concurrently in separate containers. </li>
+              <li>Containers will automatically scale in response to higher load. The number of containers that are
+                executing our code will increase and decrease as needed. </li>
+            </ul>
+
+            <p> So in the context of video transcoding solutions, the more robust, custom transcoding pipelines, may be
+              entirely in-house or deployed to an IaaS provider; both will entail a development team to create, manage,
+              and maintain the system. On the other end of the spectrum, something like a fully featured video
+              transcoding
+              service will of course be Software as a Service and will not require a development team at all! Using
+              FaaS,
+              Bento falls somewhere in the middle.</p>
+
+            <h4>2.2.2 The benefits of FaaS</h4>
+            <p>Some of the benefits of using FaaS are inherent in serverless architecture itself and some are unique to
+              using Function as a Service.
+            </p>
+
+            <div class="img-wrapper">
+              <img src="images/diagrams/faas-benefits.png" alt="text and code cells example" />
+            </div>
+
+            <p>At its core, serverless implies the outsourcing of responsibilities surrounding infrastructure, servers.
+              This provides us with some guarantees around availability and fault tolerance.</p>
+
+            <p>Function as a service also tends to be cost efficient for certain types of workflows because it operates
+              under a pay-for-compute-time model. Most FaaS providers charge only for the time it takes for a function
+              to
+              spin up and execute.The minimum execution time providers charge for is as low as 100 milliseconds. This
+              means that developers are not charged for idle server time.</p>
+
+            <p>The most important features of FaaS in the context of Bento’s architecture are the automated scaling and
+              concurrent execution of function containers. </p>
+
+            <p>Combined, these two features enable us to execute hundreds of transcoding jobs in parallel, within
+              seconds.
+            </p>
+
+            <p>These behaviors are really the bread and butter of Bento, and we will dive into them more deeply in a
+              short
+              while. To do that, let’s take a first look at how we built Bento.</p>
+
+            <h2>3 Building Bento</h2>
+            <h3>3.1 Design goals</h3>
+            <p>We built Bento with the primary goal of being fast and simple to use. After deployment, uploading and
+              transcoding a video should really be as simple as a few clicks.
+            </p>
+
+            <p>Bento is deployed to your AWS account, which means your files remain on your own servers. We understand
+              that users may not want to host their videos on a platform like YouTube or Facebook for a variety of
+              reasons
+              and additionally may prefer not to host them on a video transcoding platform.</p>
+
+            <p>The current solutions (in-house transcoding and third party services) provide maximum value for large
+              business: companies that deal with an endless stream of huge video demands. However, many small businesses
+              and even individuals have video transcoding requirements at a steady, but smaller scale. That could mean
+              processing new videos several times a day, or week, with dead periods in-between. It is for these groups
+              that Bento is best-suited.</p>
+
+            <p>The trade-offs that we made concern the transcoding process itself. With the more extensive offerings,
+              users will have near total control over the settings and options that they employ in their transcoding
+              jobs.
+              Given our use case, we opted to provide less control over transcoding settings along with fewer input and
+              output options, for the price of doing simple jobs very quickly. Currently Bento can handle at least 2
+              hours
+              of full high-definition 1080p video and at least 30 minutes of 4K video. Bento supports any input video
+              that
+              uses the h264 codec. This includes MP4, MOV, MKV, 3GP, and TS. Bento will convert any of those formats to
+              MP4. MP4 is by far the most common format used today, so we wanted to provide a quick and easy way to
+              convert less used formats.</p>
+
+            <h3>3.2 Tools</h3>
+            <p>As mentioned Bento is deployed to a user's AWS account. Bento uses a variety of resources within the AWS
+              ecosystem.</p>
+
+            <ul>
+              <li>AWS Lambda is our FaaS service</li>
+              <li>Amazon S3 is used for storing video files.</li>
+              <li>The client interacts with API Gateway to begin new jobs from the user dashboard.</li>
+              <li>Amazon Dynamo DB is used to track state within our pipeline as well as storing information about users
+                videos.
+              </li>
+            </ul>
+
+            <p>Within our Transcoding Lambdas we are using FFmpeg as our transcoding software. FFmpeg is free,
+              open-source
+              software that can perform a vast number of operations on media files. We use FFmpeg for the actual
+              transcoding step of the pipeline and take advantage of a few convenient tools that it provides elsewhere
+              in
+              the pipeline.</p>
+
+            <h3>3.3 Approach</h3>
+
+            <p>The approach we took to accomplish our goals is as follows:
+              Build a pipeline of functions that pass a video file from beginning to end, and it works like this.
+            </p>
+
+            <ol>
+              <li>Divide the video file into <em>n</em> segments.</li>
+              <li><em>n</em> number of Lambda containers, working in parallel with each other, will transcode a single
+                individual segment to the new output format.</li>
+              <li>Finally the transcoded segments are merged together into a completed video file.</li>
+            </ol>
+
+            <p>Step number two is where all of the action is in the pipeline and it is where FaaS really shines for us.
+              Let’s take a look into how FaaS facilitates this crucial step.</p>
+
+            <h4>3.3.1 Instant automated scaling</h4>
+
+            <p>FaaS services are automatically scaled horizontally when needed. This means that should we have need of
+              even 1000 containers running our code, our FaaS can do that within a few seconds, and as each one of these
+              finishes executing, the system will scale down instantly as the containers are destroyed.</p>
+
+            <p>This is crucial to step two mentioned above, because whenever Bento begins to transcode a new video, the
+              video will be broken into n segments where n is relative to the length of the video. If we want to
+              transcode
+              a 1-minute video, Bento may produce 10 to 15 segments; whereas for a 60-minute video Bento will produce
+              around 600 segments. This is what we call “bursty” workload. The level of load that is hitting the system
+              is
+              neither constant nor predictable.
+            </p>
+
+            <p>The automatic scale of FaaS is well-suited for these bursty workflows as they can immediately meet sudden
+              large compute demands and scale back down instantaneously.</p>
+
+            <h4>3.3.2 The power of concurrent processing</h4>
+            <p>To accomplish the parallel transcoding mentioned in step two, Bento is also reliant on the ability to
+              execute functions concurrently.</p>
+
+
+            <p>Video transcoding is serial by default. When a video is transcoded, the process generally works from the
+              beginning to the end of the video. And recall that video files are very large and the transcoding process
+              is
+              very slow.</p>
+
+            <p>As an example, if we imagine a video file as a composite of many portions, transcoding the first portion
+              of
+              the video will take roughly 30 minutes, the next portion will take the same amount of time and so on. The
+              entire transcoding job for a single video then, handled in the traditionally linear fashion will take
+              about
+              2 hours.</p>
+
+            <div class="img-wrapper linearSlides softened">
+              <button id="reset-linear-time" class="bentoButton" disabled> reset </button>
+              <button id="frwrd-linear-time" class="bentoButton"> &rarr; </button>
+              <img src="images/diagrams/linear-time1.png" alt="text and code cells example" />
+              <p>---</p>
+            </div>
+
+            <p>As mentioned previously, Bento will take a video to transcode and break it into segments. These segments
+              can represent the portions in the diagram above. If instead of transcoding these segments in a linear
+              fashion we could simply transcode them all at once, that would mean: 4 segments, 30 minutes for each
+              segment, each one is transcoded concurrently with the others… Transcoding this way would bring our 2 hour
+              job, down to just 30 minutes.</p>
+
+            <div class="img-wrapper parallelSlides softened">
+              <button id="reset-parallel-time" class="bentoButton" disabled> &larr; </button>
+              <button id="frwrd-parallel-time" class="bentoButton"> &rarr; </button>
+              <img src="images/diagrams/parallel-time1.png" alt="text and code cells example" />
+              <p>---</p>
+            </div>
+
+            <p>We have already cut the total transcoding time by 75% in this example scenario. However, with Bento, we
+              don’t break our videos down into quarters. We break videos down into 2-6 second segments. This means
+              dozens,
+              sometimes hundreds, of smaller portions which will each take a few seconds to transcode rather than 30
+              minutes as shown here. Once all of these segments are processing in parallel the time to transcode a video
+              is dramatically reduced. This is how Bento works. FaaS allows us to run hundreds of instances of our
+              Transcoder Lambda concurrently, each one transcoding a small portion of the input video.</p>
+
+            <h2>4 Bento Architecture</h2>
+            <p>The Bento pipeline consists of four stages, organized in a fan-out fan-in pattern. In a fan-out fan-in
+              pattern, a single large task is split into multiple smaller subtasks that are run in parallel (fan-out).
+              The
+              results of those individual subtasks are then aggregated and processed by a single reducing function
+              (fan-in).
+            </p>
+
+            <p>Bento’s four stages are:</p>
+            <ol>
+              <li>An Execution stage (fan-out)</li>
+              <li>A Transcoding stage</li>
+              <li><em>Merge Invocation</em>, an intermediate stage to determine when to begin the Merge stage</li>
+              <li>Merge (fan-in)
+              </li>
+            </ol>
+
+            <div class="img-wrapper">
+              <img src="images/gifs/overview.gif" alt="Overview of Bento Architecture" id="session-data-screenshot" />
+              <p>---</p>
+            </div>
+
+            <p>The Executor function obtains the segments of the whole video file, fires a Transcoder function worker
+              for
+              each one. All of the Transcoders execute concurrently, and after they have finished, the MergeInvoke
+              function will perform a check on the state of the pipeline and when appropriate, will fire the Merge
+              function. </p>
+
+            <h3>4.1 Stage 1 - Execution: Executing a new transcoding job</h3>
+            <p>To begin the process, the executor receives an invocation event from Bento’s admin dashboard. The body of
+              the request will have information about what video to transcode and what the resolution of the transcoded
+              video should be.</p>
+
+            <div class="img-wrapper">
+              <img src="images/gifs/executor.gif" alt="Executor diagram" id="session-data-screenshot"
+                class="softened" />
+              <p>---</p>
+            </div>
+
+            <p>The Executor function will receive this information and generate a pre-signed URL for the video’s
+              location
+              within an S3 bucket. Within the Executor, FFmpeg takes this URL as video input and probes the video as it
+              sits in S3 and collects some information about it. The Executor function uses this information to
+              determine
+              how many segments it will break the video into, based roughly on how long the video is.</p>
+
+
+            <p>Other points of this data will be stored in the database. The information that is stored in the database
+              pertains to the present transcoding job. As we saw earlier, Lambda functions are stateless and are
+              therefore
+              unaware of their broader context. This information in the database will act as state for the pipeline, and
+              will be used later to track the status of the transcoding job.</p>
+
+            <p>Now that the Executor has determined how many segments to break the video into, it finishes by invoking
+              an
+              instance of the Transcoder Lambda function for each segment. </p>
+
+            <p>When the Executor function invokes a Transcoder function, it passes in timestamps that will serve as
+              demarcations for the segment of the input video that each Transcoder Lambda is responsible for.</p>
+
+            <p>This is the Fan-out stage of our architecture. We have a single task, transcoding a single video, that we
+              “Fan out” into many pieces.
+            </p>
+
+            <p>The Executor finishes execution, Lambda tears it down, and this brings us to the Transcoding stage.</p>
+
+            <h3>4.2 Stage 2 - Transcoding: Parallelized video transcoding</h3>
+
+            <p>The goal of this stage of course is to transcode the video segment. As previously stated, the Executor
+              invokes each Transcoder with timestamps that mark the beginning and end of a segment of the original
+              video.
+            </p>
+
+            <div class="img-wrapper">
+              <img src="images/gifs/transcoder.gif" alt="Transcoder diagram" id="session-data-screenshot"
+                class="softened" />
+              <p>---</p>
+            </div>
+
+            <p>Using a new pre-signed URL, the Transcoder function will examine the original input file in memory.
+              FFmpeg
+              runs as a process within the Lambda. The timestamps passed in as arguments to the Transcoder will now be
+              used in an FFmpeg command. The command will tell FFmpeg to produce a transcoded version of the specified
+              segment.
+            </p>
+
+            <code>"-i", signedInputUrl, "-ss", "5.338656", "-to", "9.142456",
+          "-c:v", "libx264", "-c:a", "copy", "/tmp/segmentName.mp4</code>
+
+            <p>This command tells FFmpeg to use the video at <code>signedInputUrl</code> , start at
+              <code>5.338656</code>
+              seconds in, and transcode
+              from that time to <code>9.142456</code> , using the <code>h264 codec</code> to handle the video steam of
+              the
+              file, and to use the same
+              audio codec that the original video uses to handle the audio stream. (<code>-c:a, copy</code>) Finally,
+              the
+              result of
+              this
+              transformation, a 3.8038 second long video segment, now in the MP4 format, is saved in temporary storage
+              within the container that is running this Transcoder function code.</p>
+
+            <p>Once this process finishes, the Transcoder function will then send this newly created segment to a
+              different
+              S3 bucket. The <code>S3:bento</code>-transcoded-segments bucket is where Bento will house all of the
+              transcoded video
+              segments.</p>
+
+            <p>After sending off the new video segment, this Transcoder must write to to the database Segments table to
+              say,
+              “This Segment is now completed”, and to the Jobs table to say “This Job is one segment closer to being
+              complete.” For those entries, it uses some additional information passed in from the Executor such as
+              <code>jobId</code>
+              and a <code>segmentId</code>.</p>
+
+            <p>It is important to note here that though we are zoomed in to look at a single instance of the Transcoder
+              function, there are actually dozens or hundreds of Transcoder containers executing the Transcoder function
+              in
+              parallel, each with a different set of timestamps and a different <code>segmentId</code> but all with the
+              same <code>jobId</code>.</p>
+
+
+            <p>As each of the Transcoders finish their respective segments, we need to think about how and when are we
+              going
+              to get all of these segments put back together into a complete video.</p>
+
+
+            <h3>4.3 Stage 3 - Merge Invocation: When to Fan In?</h3>
+
+            <p>The goal of this stage is to invoke the Merge function, when and only when all segments have been
+              successfully transcoded. This happens by way of the MergeInvoker Lambda function.</p>
+
+            <div class="img-wrapper">
+              <img src="images/gifs/mergeInvoke.gif" alt="Merge Invoke diagram" id="session-data-screenshot"
+                class="softened" />
+              <p>---</p>
+            </div>
+
+            <p>Where are we in the pipeline? When we talk about the Merge Invocation stage it’s important to note that
+              there are things taking place in this stage as soon as the first Transcoder function to finish, has
+              recorded
+              its success to the database. We say ‘the first to finish’ because the first Transcoder container to be
+              created, may not be the first to finish execution. That issue aside, every time that a Transcoder does
+              finish execution, this Merge Invocation stage will be activated in the pipeline. How?</p>
+
+            <p>After a Transcoder has completed it’s segment, it will write to the Jobs table in the database saying in
+              effect “This job is one segment closer to being complete”. Every time an entry is made to the Jobs table,
+              the database will emit a record into what’s called an event stream. These records contain information
+              about
+              the entry that was just made, and we have set the MergeInvoker function to be triggered by and to parse
+              these database event records.</p>
+
+            <p>So the MergeInvoker will receive an event record from the Jobs table and examine the record to see if all
+              segments for this particular job have been successfully transcoded. If it finds they have it will invoke
+              the
+              Merge function directly passing in the jobId.</p>
+
+            <p>Why is this stage necessary? We will cover this question in more detail later. The basic answer is that
+              we
+              need to know when to Fan-in our operation. In the execution stage we took a large task, processing a
+              video,
+              and fanned it out into many small tasks taking place concurrently. To fan back in, to merge the segments
+              into a single video, we need to know when all of the segments are complete. But this is a tricky problem
+              given that Lambdas are stateless. The Merge Invocation stage is where we answer that problem.</p>
+
+            <h3>4.4 Stage 4 - Merge: Concatenating segments into a new video</h3>
+
+            <p>The Merge stage is the point where we Fan-in. The purpose of the Merge stage is to take all of those
+              segments that have been transcoded into the new format, and stitch them together into a complete video.
+            </p>
+
+            <div class="img-wrapper">
+              <img src="images/gifs/merge.gif" alt="Merge diagram" id="session-data-screenshot" class="softened" />
+              <p>---</p>
+            </div>
+
+            <p>We saw previously that the MergeInvoker function will call the Merge function, passing in a jobId once
+              all
+              of the segments for a particular job have been transcoded. The Merge function use this jobId to obtain
+              information from the database necessary to find the relevant segments within the
+              S3:bento-transcoded-segments bucket.</p>
+
+            <p>We will take all of those segments, And “merge” them together into one file. Then the completed video
+              file
+              is sent to storage, And with that, we have successfully transcoded the video, and the job is complete.</p>
+
+            <h2>5 Challenges</h2>
+
+            <p>We faced two main problem domains when building Bento. The first surrounds issues introduced by
+              concurrency. Serverless functions work well with Event Driven Architecture but ensuring that functions are
+              triggered at <em>just the right time</em> proved to be a challenge. Secondly, each of our functions is
+              allocated
+              temporary storage but when working with videos, storage can get maxed out pretty quickly.</p>
+
+
+            <h3>5.1 Pursuing an Event Driven Architecture (EDA)</h3>
+
+            <p>Our utilization of concurrent Lambda containers posed some challenges for us on our way to what we may
+              call
+              an hybrid-EDA. These challenges were: difficulties in tracking the status of the pipeline when it is
+              comprised of many stateless Transcoders running at once; also race conditions brought on by concurrent
+              Lambdas interacting with the same database. Here we will discuss these challenges and the solutions we
+              considered and the solutions that we implemented.</p>
+
+            <p>EDA applications react to internal and external events without a centralized workflow. Serverless
+              functions
+              are commonly found in EDA architecture, they can respond to events and can also create events that in turn
+              trigger other functions. In our pipeline one function stands out from the others, MergeInvoke. Why is it
+              needed? As the name implies it helps coordinate our pipeline’s workflow by invoking the Merge function at
+              the appropriate time. It bridges a gap, transitioning from many Transcoders running on its left to the
+              Merge
+              phase on its right.</p>
+
+
+            <p>The various stages of the Bento pipeline need to be coordinated to ensure the success of a transcoding
+              job
+              and timing the merging stage is crucial. Assembling transcoded video chunks into a final video should only
+              begin when all the segments of a job are available. The merge stage was the most difficult to coordinate.
+              On
+              its left, hundreds of Transcoder Lambdas can be running concurrently, and it’s difficult to know which
+              Transcoder will finish last or when all the functions will have completed. We needed to come up with a
+              reliable event to trigger this stage at the right time. </p>
+
+            <p>Our first path was to determine whether the event could be produced by a specific instance of a
+              Transcoder
+              function and here we came up against problems related to concurrency. </p>
+
+            <p>Let’s zoom in on the transcoding functions that run in parallel here we have four but in reality there
+              may
+              hundreds Asked ourselves? Will the last Transcoder to be invoked finish last? The first invocations of the
+              function may be more likely to complete before the later invocations</p>
+
+            <p>However... this is not guaranteed In this case if the fourth Transcoder was predicted to finish last the
+              merge function would have been invoked prematurely, before all the segments were available Since we could
+              not predict which function would complete last we considered moving away... from a strict serverless EDA
+              model Our goal was now to capture state that functions could read throughout the pipeline with a DB On to
+              a
+              second problem related to concurrency By introducing a DB to our pipeline we discovered first hand that
+              concurrent processes interacting with a DB is a recipe for race conditions A DB allowed us to store
+              metadata
+              to track state and metadata to track our pipeline’s performance To capture the state of our pipeline
+              additional logic was added to transcoders After transcoding a segment each function now: Updates a
+              segment’s
+              status from pending to complete in the Segments table Then Updates the total number of transcoded segments
+              that are complete for a job in the Jobs table Our DB reliably stores state, good, but the DB cannot
+              orchestrate the transition from the transcoding stage to the merging stage on its own We tested a model
+              where any Transcoding function could orchestrate the merge phase Before winding down these functions would
+              read the Jobs table - check if all the segments were transcoded and if so trigger the merge phase This
+              approach was not reliable because a race condition was introduced.
+              A function writes to the Jobs table, incrementing it’s completed segments counter A concurrently running
+              function completes and also increments the counter The previous function performs its read of the counter
+              and sees that all the segments are available the last function to complete performs its read and also sees
+              that all the segments are available The problem: this results in multiple invocations of the merge
+              function,
+              not what we want Even with a DB to update and read state the responsibility of orchestrating the Merge
+              stage
+              was not suitable for a Transcoder Our solution... capturing changes to the DB as events We needed a way to
+              receive and process updates to the Jobs table sequentially The creation of an event stream attached to the
+              Jobs table provides serialization of any updates within the table Capturing a time-ordered sequence of
+              updates to a table is referred to as change-data-capture A resource was now required to examine the
+              records
+              of this stream Back to the function, Invoke Merge this function was attached to the stream: and is invoked
+              when new stream records are detected with each record Invoke Merge checks the counter attribute of the Job
+              to table see if all the segments are ready, when they are the Merge phase is triggered ...While pursuing
+              an
+              Event Driven Architecture we encountered common problems related to concurrency: it is difficult to track
+              the state of concurrently running processes and race conditions are common. A DB proved to be a
+              lightweight
+              addition to the pipeline and gives us the option to the track outcomes related to our pipelines
+              performance.
+              Let’s move to our second problem domain: challenges related to storage
+            </p>
+
+            <h3>5.2 Limited function storage</h3>
+
+            <p>Video files are LARGE, if our pipeline can only handle small files our use case will be severely
+              restricted
+              Let’s take a look at how Bento went from processing videos around 250MB to 2 GB! On AWS, serverless
+              functions, Lambdas, are containerized Containers hold resources that are allocated to each Lambda Each
+              Lambda is allocated 512MB of temporary storage Our starting point was a pipeline restricted to video files
+              of no more than ~250MB, this was because of the way we were managing temporary storage The main culprit
+              was
+              the Merge stage The Merge function retrieves processed video chunks … and assembles them into our output
+              video To do all this we first had the merge function download all of the segments to its temporary storage
+              ffmpeg, our video transcoding software, was then able to concatenate these segments The Problem: Both the
+              segments and the final video were living in temporary storage before the final video could be shipped off
+              to
+              S3, our permanent storage Bento could only handle videos up to roughly 250MB Our solution to this problem:
+              avoid storing the segments in /tmp storage and instead have them processed in memory Ffmpeg does not rely
+              on
+              locally stored videos, it also accepts http input This means Segments can be downloaded and concatenated
+              in
+              memory Now..only the output is taking up temporary storage This is helpful because this function has 3GB
+              of
+              memory and only ½ GB of storage Our file size capacity doubled! To 500MB But… in the world of video 500MB
+              isn’t all that much Our input, the segments, could actually total much more than 500MB because the Merger
+              function has 3GB of memory to hold and process the segments Our storage problem now related to output
+              Let’s
+              take a closer at this output bottleneck: how the entire final video gets stuck in /tmp storage ffmpeg
+              gradually builds up the output in storage Once ffmpeg finishes the concatenation process and the entire
+              video is sitting in the Lambdas storage We then move the file to S3 Our pipeline was restricted to files
+              ~500MB, the output of the Merger function had to be optimized to make more breakthroughs Our goal was to
+              have the final file built up on S3 instead of first having to live in /tmp storage We discovered that
+              ffmpeg
+              output can be piped as a stream Instead of holding the final output it could be sent in pieces as a byte
+              stream directly to S3 AWS S3 storage supports http Multipart uploads Multipart uploads allow a file to be
+              assembled in parts .. even if the parts are not sent in order our merged video can now be gradually
+              constructed in our permanent storage, bypassing /tmp storage Here’s a bird’s eye view of present day
+              Merger
+              The transcoded segments are processed by ffmpeg in memory thanks to http input and the final video is
+              built
+              directly on S3 via http Multipart upload Because our function has 3GB of memory our pipeline can now
+              handle
+              videos upwards of 2GB We improved the reliability of our pipeline by injecting state and increased our
+              ability to handle large files </p>
+
+            <p>Now that we’ve talked about Bento’s architecture, let’s dive into Bento’s performance. </p>
+
+            <h2>6 Results</h2>
+
+            <p>As a reminder, our goal was to build a transcoder that was fast and easy to use. We bench marked Bento
+              against two competing solutions: for an in-house solution, we chose EC2 instance running FFmpeg. For a
+              transcoding service solution we chose AWS Media Convert.
+              So, how did we do?
+            </p>
+
+            <h3>6.1 Dramatic results</h3>
+
+            <p>In short, we achieved our goal. Bento consistently performed over 90% faster than an EC2 instance, and
+              50%
+              faster than Amazon’s MediaConvert transcoding service across a variety of file sizes, video durations, and
+              format types. As a caveat, we performed our benchmark against EC2’s FREE TIER of service, which had less
+              memory than the transcode functions we used in our Bento pipeline. That being said, we benchmarked against
+              AWS Lambda’s free tier. So, while one could increase EC2’s processing power and improve transcode times,
+              that increase wouldn’t yield a 90% decrease in transcoding time, and that improvement would come at the
+              expense of cost. For that reason, we feel confident in saying that Bento demonstrates that a serverless,
+              massively parallel approach to video encoding results in significant improvements to transcoding speed.
+            </p>
+
+            <h3>6.2 Limitations</h3>
+
+            <p>To wrap up, we wanted to touch on a few limitations of our current approach. The first is that function
+              as
+              a service providers have execution time limits. AWS Lambda functions, for example, have a maximum duration
+              of 15 minutes. This means that each transcoding function needs to complete its work in under 15 minutes,
+              or
+              else it will fail. Now, as you saw, even high quality videos move through our pipeline in far less time
+              that
+              that. So, while we are far from experiencing this in practice, transcoding a sufficiently large, high
+              quality video segment could cause issues in our pipeline. Second, Bento is built to be the fastest video
+              transcoding pipeline. Optimizations for video quality and file size are not the primary goals. There are
+              transcoding optimizations that could be made to further improve the quality and the final file size of
+              videos. However, most of these optimizations would come at the expense of speed. We made an explicit
+              tradeoff to focus on speed and ease of use. Finally, when you move from the free tier, lambda’s
+              compute/second is more expensive than EC2. this is partially mitigated by the vastly reduced time spent
+              transcoding. However, for businesses that are transcoding 24/7, transcoding on lambda, or any function as
+              a
+              service, would end up being more expensive. Again, Bento is for businesses with frequent, but intermittent
+              video demands. Video platforms and media businesses that have enough content to spend their full time
+              transcoding would not see a cost advantage with Bento.</p>
+
+            <h2>7 Future work</h2>
+
+            <p>Before we finish up, we wanted to highlight some opportunities to enhance Bento that we’re excited about.
+              First, we’d like to build support for HLS and DASH as output formats. Just as the mp4 format that Bento
+              supports is the most widely used video file format, HLS and DASH together represent that primary streaming
+              video formats used today. We’d also like to add more types of video transformations to our pipeline. For
+              example, many businesses add subtitles and intro/outro bumpers to their videos. Bento’s transcoding
+              pipeline
+              is well suited to perform these sorts of transformations in the future.</p>
+
+  </main>
+
+  <section id="our-team">
+    <h2 id="team">Our Team</h2>
+
+    <p>
+      We are looking forward to new opportunities. Please contact us if this project interested you, or if you have
+      any questions!
+    </p>
+
+    <ul>
+      <li class="individual">
+        <img src="images/avatars/charles.png" alt="Charles Ging" />
+
+        <h3>Mike Del Rio</h3>
+
+        <p>Denver, CO</p>
+
+        <ul class="social-icons">
+          <li>
+            <a href="mailto:charles.ging@gmail.com" target="">
+              <img src="images/icons/email_icon.png" alt="email" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://charlesging.github.io/" target="_blank">
+              <img src="images/icons/website_icon.png" alt="website" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/charlesging/" target="_blank">
+              <img src="images/icons/linked_in_icon.png" alt="linkedin" />
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="individual">
+        <img src="images/avatars/ben.png" alt="Ben Harvey" />
+
+        <h3>Max Hawkins</h3>
+
+        <p>Portland, ME</p>
+
+        <ul class="social-icons">
+          <li>
+            <a href="mailto:benjaminriderharvey@gmail.com" target="">
+              <img src="images/icons/email_icon.png" alt="email" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://ben-harvey.github.io/" target="_blank">
+              <img src="images/icons/website_icon.png" alt="website" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/ben-rider-harvey/" target="_blank">
+              <img src="images/icons/linked_in_icon.png" alt="linkedin" />
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="individual">
+        <img src="images/avatars/will.jpg" alt="William Mills" />
+
+        <h3>Nathan Classen</h3>
+
+        <p>Toronto, ON</p>
+
+        <ul class="social-icons">
+          <li>
+            <a href="mailto:millswilliamrobert@gmail.com" target="">
+              <img src="images/icons/email_icon.png" alt="email" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://w-mills.github.io/" target="_blank">
+              <img src="images/icons/website_icon.png" alt="website" />
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/w-mills" target="_blank">
+              <img src="images/icons/linked_in_icon.png" alt="linkedin" />
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="footnotes">
+    <h2 id="references">7 References</h2>
+    <h4 id="ref-heading">7.1 Computational Notebooks</h4>
+    <ul>
+      <li>
+        <a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b"
+          target="_blank">Jupyter Lab: Evolution of the Jupyter Notebook</a>
+      </li>
+      <li>
+        <a href="https://blog.nteract.io/nteract-building-on-top-of-jupyter-9cfbccdd4c1d" target="_blank">nteract:
+          Building on Top of Jupyter</a>
+      </li>
+      <li>
+        <a href="https://moderndata.plot.ly/nteract-revolutionizing-notebook-experience/" target="_blank">nteract:
+          Revolutionizing the Notebook Experience</a>
+      </li>
+      <li>
+        <a href="https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/"
+          target="_blank">The Scientific Paper is Obsolete</a>
+      </li>
+      <li>
+        <a href="https://medium.com/netflix-techblog/notebook-innovation-591ee3221233" target="_blank">Notebook
+          Innovation at Netflix</a>
+      </li>
+      <li>
+        <a href="https://hackernoon.com/simplify-devops-with-jupyter-notebook-c700fb6b503c" target="_blank">Devops
+          with Juypter</a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g37ce315c78_0_27"
+          target="_blank">I Don't Like Notebooks</a>
+      </li>
+      <li>
+        <a href="https://yihui.name/en/2018/09/notebook-war/" target="_blank">Notebook Wars</a>
+      </li>
+      <li>
+        <a href="https://blog.runkit.com/2015/09/10/time-traveling-in-node-js-notebooks/" target="_blank">Time
+          Traveling in Node.js Notebooks</a>
+      </li>
+      <li>
+        <a href="https://medium.com/netflix-techblog/open-sourcing-polynote-an-ide-inspired-polyglot-notebook-7f929d3f447"
+          target="_blank">Open-Sourcing Polynote</a>
+      </li>
+      <li>
+        <a href="https://observablehq.com/@observablehq/observables-not-javascript%3E" target="_blank">Observable's
+          Not Javascript</a>
+      </li>
+    </ul>
+    <h4>7.2 WebSockets</h4>
+    <ul>
+      <li>
+        <a href="https://www.ably.io/concepts/websockets" target="_blank">WebSockets - A Conceptual Deep-Dive</a>
+      </li>
+      <li>
+        <a href="http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf" target="_blank">Performance
+          comparison of XHR polling, Long polling, Server sent events and Websockets</a>
+      </li>
+      <li>
+        <a href="https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77"
+          target="_blank">HTTP vs Websockets: A performance comparison</a>
+      </li>
+    </ul>
+    <h4>7.3 Node Child Processes and Streams</h4>
+    <ul>
+      <li>
+        <a href="https://dzone.com/articles/understanding-execfile-spawn-exec-and-fork-in-node"
+          target="_blank">execFile, spawn, exec, and fork in Node.js</a>
+      </li>
+      <li>
+        <a href="https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/"
+          target="_blank">Node JS Streams</a>
+      </li>
+    </ul>
+    <h4>7.4 Permissions, gVisor, and cgroups</h4>
+
+    <ul>
+      <li>
+        <a href="https://www.ostechnix.com/how-to-limit-users-access-to-the-linux-system/" target="_blank">Limit
+          User's Access To The Linux System</a>
+      </li>
+      <li>
+        <a href="https://gvisor.dev/docs/" target="_blank">gVisor Security Model</a>
+      </li>
+      <li>
+        <a href="https://thenewstack.io/how-to-implement-secure-containers-using-googles-gvisor/"
+          target="_blank">Implement Secure Containers Using Google's gVisor</a>
+      </li>
+      <li>
+        <a href="https://docs.docker.com/config/containers/resource_constraints/" target="_blank">Runtime Options
+          With Memory, CPUs, and GPUs</a>
+      </li>
+      <li>
+        <a href="https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b"
+          target="_blank">Container Processes Shouldn't Run as Root</a>
+      </li>
+    </ul>
+  </section>
+  <!-- <a id="try-redpoint" href="https://www.redpointnotebooks.com" target="_blank">TRY REDPOINT</a> -->
+</body>
+
+</html>
