@@ -51,11 +51,11 @@
       <img src="./images/logos/bento_logo.png" />
     </p>
     <a href="https://github.com/orgs/bento-video/dashboard" target="_blank">
-      <img src="images/github/github_white.png" alt="github logo" id="github-logo" />
+      <img src="images/github/github_black.png" alt="github logo" id="github-logo" />
     </a>
   </div>
   <a id="toTop-link" href="#" target="_blank">
-    <img src="images/icons/back-to-top.png" alt="Back to top" id="toTop-logo" />
+    <img src="images/icons/toTop-icon.png" alt="Back to top" id="toTop-logo" />
   </a>
   <header id="home">
     <h1>
@@ -90,15 +90,15 @@
 
       <article class="box">
         <div class="text-box">
-          <h1>Donec ut feugiat ex.</h1>
+          <h1>High speed video transcoding in the cloud.</h1>
           <p>
-            Proin eu faucibus orci. Maecenas pellentesque eget lacus dapibus facilisis.
+            Transcode your videos at lightning speed.
           </p>
         </div>
       </article>
 
       <div class="box">
-        <img src="#" alt="" />
+        <img src="images/gifs/fast-transcode.gif" alt="" class="softened" />
       </div>
     </div>
   </section>
@@ -129,12 +129,36 @@
     <section id="case-study">
       <h1>Case Study</h1>
 
-      <div id="side-nav">
+      <!-- <div id="side-nav">
         <img src="images/logos/bento_logo.png" alt="Bento Logo" />
+      </div> -->
+      <div id="side-nav">
+        <img src="images/logos/bento_logo.png" alt="Bento Logo" id="nav-logo" />
       </div>
-
       <nav>
-        <ul></ul>
+        <ul id="nav-links">
+          <li id="introduction-nav">
+            <a class="case-study-anchor" href="#introduction">introduction</a>
+          </li>
+          <li id="serverless-nav">
+            <a class="case-study-anchor" href="#serverless">serverless</a>
+          </li>
+          <li id="building-nav">
+            <a class="case-study-anchor" href="#building">building</a>
+          </li>
+          <li id="architecture-nav">
+            <a class="case-study-anchor" href="#architecture">architecture</a>
+          </li>
+          <li id="challenges-nav">
+            <a class="case-study-anchor" href="#challenges">challenges</a>
+          </li>
+          <li id="results-nav">
+            <a class="case-study-anchor" href="#results">results</a>
+          </li>
+          <li id="future-work-nav">
+            <a class="case-study-anchor" href="#future-work">future work</a>
+          </li>
+        </ul>
       </nav>
 
       <div class="chapter">
@@ -145,18 +169,21 @@
         <p>Bento is a blazing fast serverless video transcoding pipeline that can easily be deployed to Amazon Web
           Services (AWS). It is built for individuals and small businesses seeking a fast, simple, open-source solution
           to their video transcoding needs.</p>
+
         <p>Converting high-definition videos to new formats and resolutions is a process that can take hours on a single
           machine. Businesses that serve videos to their users typically turn to video transcoding services, which are
           expensive, or build their own video transcoding server farms, which are complex and error-prone.</p>
         <p>By leveraging the instant scale and concurrent execution of function-as-a-service architecture, Bento
           transcodes hundreds of small parts of a video file in parallel, slashing multi-hour transcoding jobs down to
           minutes.</p>
+
         <p>This case study will outline the approach that we took to developing a serverless solution to video
           transcoding, and will explore some of the technical challenges of processing large video files in a highly
           concurrent cloud system. We will conclude by benchmarking Bento against typical competitors to demonstrate the
           impressive results yielded by taking this approach to video transcoding.</p>
         <p>To begin, let’s take a step back and discuss what video transcoding is, and why video is among the most
           compelling challenges in web development. </p>
+
         <h3>1.2 Why is video interesting?</h3>
         <p>Video is ubiquitous on the web. Video-on-demand platforms are billion-dollar businesses. Video dominates
           social media feeds and internet ads. Yet for all of this, video is often taken for granted. We rarely stop to
@@ -357,7 +384,7 @@
             serverless technology.</p>
       </div>
       <div class="chapter">
-        <h2>2 Toward a serverless Architecture</h2>
+        <h2 id="serverless"> 2 Toward a serverless Architecture</h2>
 
         <p>Bento is “serverless”, but what does that mean? As it turns out, serverless is a bit of an overloaded term
           and it’s not always clear what exactly is being referred to.</p>
@@ -452,7 +479,7 @@
             while. To do that, let’s take a first look at how we built Bento.</p>
       </div>
       <div class="chapter">
-        <h2>3 Building Bento</h2>
+        <h2 id="building">3 Building Bento</h2>
         <h3>3.1 Design goals</h3>
         <p>We built Bento with the primary goal of being fast and simple to use. After deployment, uploading and
           transcoding a video should really be as simple as a few clicks.
@@ -581,7 +608,7 @@
           Transcoder Lambda concurrently, each one transcoding a small portion of the input video.</p>
       </div>
       <div class="chapter">
-        <h2>4 Bento Architecture</h2>
+        <h2 id="architecture">4 Bento Architecture</h2>
         <p>The Bento pipeline consists of four stages, organized in a fan-out fan-in pattern. In a fan-out fan-in
           pattern, a single large task is split into multiple smaller subtasks that are run in parallel (fan-out).
           The
@@ -767,7 +794,7 @@
           is sent to storage, And with that, we have successfully transcoded the video, and the job is complete.</p>
       </div>
       <div class="chapter">
-        <h2>5 Challenges</h2>
+        <h2 id="challenges">5 Challenges</h2>
 
         <p>We faced two main problem domains when building Bento. The first surrounds issues introduced by
           concurrency. Serverless functions work well with Event Driven Architecture but ensuring that functions are
@@ -900,7 +927,7 @@
         <p>Now that we’ve talked about Bento’s architecture, let’s dive into Bento’s performance. </p>
       </div>
       <div class="chapter">
-        <h2>6 Results</h2>
+        <h2 id="results">6 Results</h2>
 
         <p>As a reminder, our goal was to build a transcoder that was fast and easy to use. We bench marked Bento
           against two competing solutions: for an in-house solution, we chose EC2 instance running FFmpeg. For a
@@ -944,7 +971,7 @@
           transcoding would not see a cost advantage with Bento.</p>
       </div>
       <div class="chapter">
-        <h2>7 Future work</h2>
+        <h2 id="future-work">7 Future work</h2>
 
         <p>Before we finish up, we wanted to highlight some opportunities to enhance Bento that we’re excited about.
           First, we’d like to build support for HLS and DASH as output formats. Just as the mp4 format that Bento

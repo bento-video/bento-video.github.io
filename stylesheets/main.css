@@ -418,24 +418,29 @@ header h1 img {
 ------------------------------------ */
 #side-nav {
   display: none;
-  left: 2%;
   position: fixed;
-  top: 5%;
+  top: 25%;
+  left: 56px;
   transform: translateY(-50%);
+  width: 150px;
+}
+
+ul#nav-links {
+  margin: 0;
 }
 
 #side-nav img {
   width: 100%;
   max-width: 250px;
   height: auto;
-  margin-top: 120px;
+  margin: 0;
 }
 
 #case-study nav {
   display: none;
   left: 2rem;
   position: fixed;
-  top: 40%;
+  top: 60%;
   transform: translateY(-60%);
 }
 
@@ -446,18 +451,17 @@ header h1 img {
   margin-bottom: 2vh;
 }
 
-#case-study nav li:first-of-type {
+/* #case-study nav li:first-of-type {
   margin-top: 150px;
-}
+} */
 
-#case-study nav li:last-of-type {
-  margin-top: 75px;
-  list-style: none;
+ul#nav-links {
+  margin-top: 50px;
 }
 
 #case-study nav a {
   color: #999;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-left: 1rem;
   text-decoration: none;
   vertical-align: 0.1rem;
