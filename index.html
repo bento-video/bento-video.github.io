@@ -736,7 +736,7 @@
         <p>In the chart below, we provide a cross-section of benchmark data that illustrates the results we saw at small
           (&lt; 100MB), medium (100+ MB), large (1+ GB) and very large (2+ GB) file sizes.</p>
 
-        <h3>6.1 Benchmarking Results</h3>
+        <h3>4.1 Benchmarking Results</h3>
 
         <!-- GET RESULTS DIAGRAM -->
 
@@ -911,7 +911,7 @@
         <p>The Merge Invocation stage encapsulates the solution to this problem. The objective of this stage is to
           invoke the Merge function only when all the segments of a video have been successfully transcoded.</p>
 
-        <h4>4.3.2 Capturing change in state with DynamoDB Streams</h4>
+        <h4>5.3.2 Capturing change in state with DynamoDB Streams</h4>
 
         <p>To implement the Merge Invocation stage, we rely on a feature of DynamoDB, called DynamoDB Streams. DynamoDB
           Streams are time-ordered series of records that are created when a given database table is updated. Each
@@ -928,7 +928,7 @@
         <p>The update causes the Jobs table to emit a record into the event stream, which in turn invokes the Merge
           Invoker function.</p>
 
-        <h4>4.3.3 Invoking the Merge</h4>
+        <h4>5.3.3 Invoking the Merge</h4>
 
         <p>The Merge Invoker receives the event from the stream, which contains the latest snapshot of the job record.
           The function compares the number of completed segments to the total number of segments to determine whether
@@ -970,7 +970,7 @@
           Driven Architecture and 2) limited function storage.</p>
 
         <h3>6.1 Pursuing an Event Driven Architecture (EDA)</h3>
-        <h4>5.1.1 What is Event Driven Architecture?</h4>
+        <h4>6.1.1 What is Event Driven Architecture?</h4>
 
         <p>Function as a Service is event-driven. Therefore, building an application with Function as a Service implies
           the use of an Event Driven Architecture.</p>
@@ -990,7 +990,7 @@
           REST. Interactions occur asynchronously, and event producers are decoupled from event consumers. One of the
           features this facilitates is the rapid scaling FaaS is able to accomplish in response to incoming events.</p>
 
-        <h4>5.1.2 Problem: Tracking the sequence of concurrent events</h4>
+        <h4>6.1.2 Problem: Tracking the sequence of concurrent events</h4>
 
         <p>Purely event-driven applications react to internal and external events without a central orchestrator [1].
           Instead, execution flow is completely determined by the occurrence of individual events.</p>
@@ -1036,7 +1036,7 @@
           Let’s move to our second problem domain: challenges related to storage
         </p>
 
-        <h3>5.2 Limited function storage</h3>
+        <h3>6.2 Limited function storage</h3>
 
         <p>Video files are LARGE, if our pipeline can only handle small files our use case will be severely
           restricted
@@ -1082,59 +1082,33 @@
         <p>Now that we’ve talked about Bento’s architecture, let’s dive into Bento’s performance. </p>
       </div>
       <div class="chapter">
-        <h2 id="results">6 Results</h2>
+        <h2 id="results">7 Bento Dashboard</h2>
 
-        <p>As a reminder, our goal was to build a transcoder that was fast and easy to use. We bench marked Bento
-          against two competing solutions: for an in-house solution, we chose EC2 instance running FFmpeg. For a
-          transcoding service solution we chose AWS Media Convert.
-          So, how did we do?
-        </p>
+        <p>To easily transcode videos with Bento, we’ve provided a user interface that we call <strong>Bento
+            Dashboard</strong>. Bento
+          Dashboard is built in React with an Express backend that can be run locally for individual use, or deployed to
+          Amazon EC2 for organizational use.</p>
 
-        <h3>6.1 Dramatic results</h3>
-
-        <p>In short, we achieved our goal. Bento consistently performed over 90% faster than an EC2 instance, and
-          50%
-          faster than Amazon’s MediaConvert transcoding service across a variety of file sizes, video durations, and
-          format types. As a caveat, we performed our benchmark against EC2’s FREE TIER of service, which had less
-          memory than the transcode functions we used in our Bento pipeline. That being said, we benchmarked against
-          AWS Lambda’s free tier. So, while one could increase EC2’s processing power and improve transcode times,
-          that increase wouldn’t yield a 90% decrease in transcoding time, and that improvement would come at the
-          expense of cost. For that reason, we feel confident in saying that Bento demonstrates that a serverless,
-          massively parallel approach to video encoding results in significant improvements to transcoding speed.
-        </p>
-
-        <h3>6.2 Limitations</h3>
-
-        <p>To wrap up, we wanted to touch on a few limitations of our current approach. The first is that function
-          as
-          a service providers have execution time limits. AWS Lambda functions, for example, have a maximum duration
-          of 15 minutes. This means that each transcoding function needs to complete its work in under 15 minutes,
-          or
-          else it will fail. Now, as you saw, even high quality videos move through our pipeline in far less time
-          that
-          that. So, while we are far from experiencing this in practice, transcoding a sufficiently large, high
-          quality video segment could cause issues in our pipeline. Second, Bento is built to be the fastest video
-          transcoding pipeline. Optimizations for video quality and file size are not the primary goals. There are
-          transcoding optimizations that could be made to further improve the quality and the final file size of
-          videos. However, most of these optimizations would come at the expense of speed. We made an explicit
-          tradeoff to focus on speed and ease of use. Finally, when you move from the free tier, lambda’s
-          compute/second is more expensive than EC2. this is partially mitigated by the vastly reduced time spent
-          transcoding. However, for businesses that are transcoding 24/7, transcoding on lambda, or any function as
-          a
-          service, would end up being more expensive. Again, Bento is for businesses with frequent, but intermittent
-          video demands. Video platforms and media businesses that have enough content to spend their full time
-          transcoding would not see a cost advantage with Bento.</p>
+        <p>Bento Dashboard enables users to upload locally stored videos to S3 for transcoding. Once uploaded,
+          transcoding jobs can be run with a few clicks.</p>
       </div>
       <div class="chapter">
-        <h2 id="future-work">7 Future work</h2>
+        <h2 id="future-work">8 Future work</h2>
 
-        <p>Before we finish up, we wanted to highlight some opportunities to enhance Bento that we’re excited about.
-          First, we’d like to build support for HLS and DASH as output formats. Just as the mp4 format that Bento
-          supports is the most widely used video file format, HLS and DASH together represent that primary streaming
-          video formats used today. We’d also like to add more types of video transformations to our pipeline. For
-          example, many businesses add subtitles and intro/outro bumpers to their videos. Bento’s transcoding
-          pipeline
-          is well suited to perform these sorts of transformations in the future.</p>
+        <p>We’d like to highlight some opportunities to enhance Bento that we’re excited about.</p>
+
+        <h5>Support for HLS and DASH output</h5>
+
+        <p>Bento currently supports MP4 output because it is the most widely used and supported video file format in use
+          today. We’d like to add support for HLS and DASH formats, which together represent the most common adaptive
+          bitrate streaming formats. Adaptive bitrate streaming is a technique employed by modern video players that
+          enable on-the-fly quality adjustments to changes in available bandwidth.</p>
+
+        <h5>Support for additional video transformation</h5>
+
+        <p>Many businesses perform additional transformations to their videos, including adding subtitles and
+          intro/outro bumpers. Bento’s transcoding pipeline is well-suited to be extended to perform these sorts of
+          transformations.</p>
       </div>
   </main>
 
@@ -1234,8 +1208,8 @@
   </section>
 
   <section id="footnotes">
-    <h2 id="references">7 References</h2>
-    <h4 id="ref-heading">7.1 Computational Notebooks</h4>
+    <h2 id="references">References</h2>
+    <h4 id="ref-heading">Event Driven Architecture</h4>
     <ul>
       <li>
         <a href="https://towardsdatascience.com/jupyter-lab-evolution-of-the-jupyter-notebook-5297cacde6b"
@@ -1279,54 +1253,6 @@
       <li>
         <a href="https://observablehq.com/@observablehq/observables-not-javascript%3E" target="_blank">Observable's
           Not Javascript</a>
-      </li>
-    </ul>
-    <h4>7.2 WebSockets</h4>
-    <ul>
-      <li>
-        <a href="https://www.ably.io/concepts/websockets" target="_blank">WebSockets - A Conceptual Deep-Dive</a>
-      </li>
-      <li>
-        <a href="http://www.diva-portal.se/smash/get/diva2:1133465/FULLTEXT01.pdf" target="_blank">Performance
-          comparison of XHR polling, Long polling, Server sent events and Websockets</a>
-      </li>
-      <li>
-        <a href="https://blog.feathersjs.com/http-vs-websockets-a-performance-comparison-da2533f13a77"
-          target="_blank">HTTP vs Websockets: A performance comparison</a>
-      </li>
-    </ul>
-    <h4>7.3 Node Child Processes and Streams</h4>
-    <ul>
-      <li>
-        <a href="https://dzone.com/articles/understanding-execfile-spawn-exec-and-fork-in-node"
-          target="_blank">execFile, spawn, exec, and fork in Node.js</a>
-      </li>
-      <li>
-        <a href="https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/"
-          target="_blank">Node JS Streams</a>
-      </li>
-    </ul>
-    <h4>7.4 Permissions, gVisor, and cgroups</h4>
-
-    <ul>
-      <li>
-        <a href="https://www.ostechnix.com/how-to-limit-users-access-to-the-linux-system/" target="_blank">Limit
-          User's Access To The Linux System</a>
-      </li>
-      <li>
-        <a href="https://gvisor.dev/docs/" target="_blank">gVisor Security Model</a>
-      </li>
-      <li>
-        <a href="https://thenewstack.io/how-to-implement-secure-containers-using-googles-gvisor/"
-          target="_blank">Implement Secure Containers Using Google's gVisor</a>
-      </li>
-      <li>
-        <a href="https://docs.docker.com/config/containers/resource_constraints/" target="_blank">Runtime Options
-          With Memory, CPUs, and GPUs</a>
-      </li>
-      <li>
-        <a href="https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b"
-          target="_blank">Container Processes Shouldn't Run as Root</a>
       </li>
     </ul>
   </section>
