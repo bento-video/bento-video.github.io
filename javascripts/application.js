@@ -115,15 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
   //   const mobileCaseStudyNavUl = document.querySelector("#case-study-mobile ul");
   const $toTop = $("#toTop-logo");
 
-  //   $toTop.on("click", function (e) {
-  //     e.preventDefault();
-  //     $([document.documentElement, document.body]).animate(
-  //       {
-  //         scrollTop: $("#introduction").offset().top
-  //       },
-  //       1000
-  //     );
-  //   });
+  $toTop.on("click", function (e) {
+    e.preventDefault();
+    $([document.documentElement, document.body]).animate(
+      {
+        scrollTop: $("#introduction").offset().top
+      },
+      1000
+    );
+  });
 
   //   let topNavVisible = false;
   let smallNavVisible = false;

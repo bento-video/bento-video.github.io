@@ -253,8 +253,8 @@ img {
   cursor: pointer;
   width: 50px;
   position: fixed;
-  top: 110px;
-  right: 28px;
+  top: 40px;
+  right: 40px;
 }
 
 #github-logo:hover {
