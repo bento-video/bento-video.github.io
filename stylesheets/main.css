@@ -301,6 +301,9 @@ img {
   width: auto;
 }
 
+video {
+  width: 500px;
+}
 /* ---------------------------------
 
                code                           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
@@ -386,6 +389,7 @@ nav#site-navigation a {
 header {
   height: 100vh;
   background: #fff;
+  display: flex;
 }
 
 header h1 {
@@ -409,11 +413,9 @@ header span {
   color: #ed7164;
 }
 
-header h1 img {
-  display: block;
+header img {
+  margin: auto;
   width: 100%;
-  max-width: 300px;
-  margin: 10% auto 10%;
   padding: 0;
 }
 
