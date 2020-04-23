@@ -89,14 +89,16 @@ h4 {
 }
 
 .integration:first-of-type {
-  background: #27a87f;
-  color: #fff;
+  /* background: #27a87f;
+  color: #fff; */
+  background: #cff52a;
+  color: #02576c;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
 .integration:first-of-type h1 {
-  color: #fff;
+  color: #02576c;
 }
 
 .integration h1 {
@@ -433,8 +435,9 @@ ul#nav-links {
 }
 
 #side-nav img {
+  display: none;
   width: 100%;
-  max-width: 250px;
+  max-width: 80px;
   height: auto;
   margin: 0;
 }
