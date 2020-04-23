@@ -4,14 +4,14 @@
 
 ------------------------------------ */
 
-/* yellow fbd591 */
-/* code highlight green 8dbc9d */
-/* light green dcf6d1 */
-/* light gray a0aab5 */
-/* code orange e38a5f */
-/* redpoint orange ed7164 */
-/* RP grey nav text a0aab5  */
-/* RP nav background 353a40 */
+:root {
+  --bento-blue: #02576c;
+  --bento-darkgreen: #27a87f;
+  --bento-medgreen: #4dd599;
+  --bento-limegreen: #cff52a;
+  --bento-yellow: #ffee61;
+  --bento-darkgray: #495057;
+}
 
 body {
   background-color: #fff;
@@ -35,7 +35,8 @@ main {
 }
 
 a {
-  color: #6897bb;
+  /* color: #6897bb; */
+  color: var(--bento-darkgreen);
   text-decoration: none;
 }
 
@@ -45,7 +46,7 @@ h3,
 h4,
 h5 {
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: var(--bento-blue);
 }
 
 h1 {
@@ -105,14 +106,14 @@ h4 {
   color: #02576c;
 }
 
-.integration:nth-of-type(2) {
+.integration:nth-of-type(3) {
   background: #cff52a;
   color: #02576c;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
-.integration:nth-of-type(3) {
+.integration:nth-of-type(2) {
   background: #ffee61;
   color: #02576c;
   padding-top: 40px;
@@ -238,7 +239,7 @@ img {
 #bento-logo {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
-  color: #ed7164; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  color: var(--bento-blue);
   cursor: pointer;
   width: 50px;
   position: fixed;
@@ -248,7 +249,7 @@ img {
 }
 
 #bento-logo img {
-  width: 50px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  width: 50px;
 }
 
 #github-logo {
@@ -329,7 +330,7 @@ pre code {
 }
 
 code {
-  color: #ed7164;
+  color: var(--bento-blue);
   font-family: "Fira Code", monospace;
   font-size: 1rem;
 }
@@ -467,6 +468,7 @@ ul#nav-links {
 
 #case-study nav a {
   color: #999;
+  /* color: var(--bento-blue); */
   font-size: 1.2rem;
   margin-left: 1rem;
   text-decoration: none;
@@ -474,7 +476,7 @@ ul#nav-links {
 }
 
 #case-study nav a:hover {
-  color: #ed7164;
+  color: var(--bento-darkgreen);
 }
 
 #case-study h3,
@@ -499,7 +501,7 @@ ul#nav-links {
 }
 
 #case-study h2 {
-  color: #27a87f;
+  color: var(--bento-blue);
   font-family: "Roboto", sans-serif;
   margin: 75px auto 40px auto;
 }
@@ -522,7 +524,7 @@ h3,
 #case-study h3,
 #case-study h4,
 #case-study h5 {
-  color: #02576c;
+  color: var(--bento-blue);
 }
 
 #case-study p,
@@ -695,6 +697,10 @@ hr {
 ul li {
   margin-bottom: 0.8em;
 }
+
+#case-study #transcoder-invoke-payload {
+  width: 50%;
+}
 /* ---------------------------------
 
             footnotes
@@ -727,7 +733,7 @@ ul li {
 ------------------------------------ */
 
 h2#references {
-  color: #ed7164;
+  color: var(--bento-blue);
   /* font-size: 1.7rem; */
 }
 
@@ -747,7 +753,7 @@ h2#references {
 }
 
 #footnotes a {
-  color: #6897bb;
+  color: #999;
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -759,7 +765,7 @@ h2#references {
 ------------------------------------ */
 
 #our-team {
-  background-color: #a0aab5;
+  background-color: var(--bento-limegreen);
   color: #1e4470;
   margin-top: 100px;
   padding-bottom: 25px;

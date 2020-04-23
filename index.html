@@ -127,7 +127,7 @@
       </div>
     </section>
 
-    <!-- <section class="integration">
+    <section class="integration">
       <div class="integration-wrapper">
         <div class="box" id="">
           <img src="#" alt="" />
@@ -135,16 +135,15 @@
 
         <article class="box">
           <div class="text-box">
-            <h1>Nunc a accumsan lorem.</h1>
+            <h1>Simple-to-use interface</h1>
 
             <p>
-              Curabitur odio dolor, venenatis ac dolor at, malesuada placerat
-              nunc. Donec non augue et mi rutrum rutrum non eu magna.
+              Output to a variety of supported resolutions in just a few clicks.
             </p>
           </div>
         </article>
       </div>
-    </section> -->
+    </section>
 
     <main>
       <section id="case-study">
@@ -822,7 +821,7 @@
 
           <p>
             We discuss how Bento approached and resolved this limitation in
-            section 6.1 of this case study.
+            section 7.1 of this case study.
           </p>
 
           <h5>Execution Duration</h5>
@@ -1215,7 +1214,7 @@
             (100+ MB), large (1+ GB) and very large (2+ GB) file sizes.
           </p>
 
-          <h3>4.1 Benchmarking Results</h3>
+          <h3>5.1 Benchmarking Results</h3>
 
           <div class="img-wrapper">
             <img src="images/diagrams/results.png" alt="Benchmark results" />
@@ -1240,7 +1239,7 @@
           </p>
         </div>
         <div class="chapter chp6">
-          <h2 id="architecture">5 Bento Architecture</h2>
+          <h2 id="architecture">6 Bento Architecture</h2>
 
           <p>
             The Bento pipeline consists of four stages, organized in a fan-out
@@ -1290,7 +1289,7 @@
 
           <p>Let’s explore how we built each stage in more depth.</p>
 
-          <h3>5.1 Stage 1 - Executor</h3>
+          <h3>6.1 Stage 1 - Executor</h3>
 
           <h5>Goals:</h5>
 
@@ -1308,7 +1307,7 @@
             />
           </div>
 
-          <h4>5.1.1 Segmenting a video file</h4>
+          <h4>6.1.1 Segmenting a video file</h4>
 
           <p>
             To begin the process, the Executor receives an invocation event
@@ -1324,28 +1323,22 @@
 
           <p>
             Our initial approach was to use Ffmpeg’s segment muxer. This tool
-            divides an input video into segments of m-second length. As a
+            divides an input video into segments of <i>m</i>-second length. As a
             starting point, we chose segments that were four seconds in length.
           </p>
 
           <p>
             At this point, we invoke the Transcoder function for each video
-            segment. When FaaS functions are invoked, they can be passed JSON
-            data in the body of the request. Because we can’t directly pass
-            video files between functions, we use Amazon S3 as intermediate
-            storage for video segments.
-          </p>
-
-          <p>
-            We save each video segment to S3, then pass the location of a video
-            segment in S3 to each invocation of the transcoder function.
+            segment. We save each video segment to S3, and then pass the
+            location of a video segment in S3 to each invocation of the
+            transcoder function.
           </p>
 
           <p>
             Although this approach achieves our objective, we noticed early on
             that the Executor function was taking much longer than we expected
             to complete. Video files that were a few hundred megabytes were
-            hitting our function’s execution time limit of 15 minutes.
+            hitting our function’s execution time limit of fifteen minutes.
           </p>
 
           <p>
@@ -1355,7 +1348,7 @@
             slow video transcoding on single machines.
           </p>
 
-          <h4>5.1.2 Mapping a video for segment times</h4>
+          <h4>6.1.2 Mapping a video for segment times</h4>
 
           <p>
             We decided on an alternate approach. Rather than splitting a video
@@ -1379,7 +1372,7 @@
           <p>
             We save information about each segment to a table in DynamoDB, and
             save the status of the entire transcoding job to a separate table.
-            In section 5.1 of this case study, we will explore the challenges of
+            In section 7.1 of this case study, we will explore the challenges of
             preserving state across Function as a Service in more detail.
           </p>
 
@@ -1394,10 +1387,15 @@
             <img
               src="images/diagrams/transcoder-invoke-payload.png"
               alt="JSON payload that gets passed to Transcoder function"
+              id="transcoder-invoke-payload"
             />
+            <p>
+              The Executor invokes an instance of the Transcoder, passing along
+              the start and end times of the segment to produce
+            </p>
           </div>
 
-          <h3>5.2 Stage 2 - Transcoder</h3>
+          <h3>6.2 Stage 2 - Transcoder</h3>
 
           <h5>Goals:</h5>
 
@@ -1427,7 +1425,7 @@
             over HTTP, allowing us to process the video in memory and bypass the
             need to store the full file locally. We expand on the challenges of
             storing and processing large video files in a FaaS architecture in
-            section 5.2 of this case study.
+            section 7.2 of this case study.
           </p>
 
           <p>
@@ -1464,7 +1462,7 @@
             complete transcoded video.
           </p>
 
-          <h3>5.3 Stage 3 - Merge Invocation</h3>
+          <h3>6.3 Stage 3 - Merge Invocation</h3>
 
           <p>Goals:</p>
 
@@ -1475,7 +1473,7 @@
             </li>
           </ul>
 
-          <h4>5.3.1 Coordinating pipeline stages amidst concurrency</h4>
+          <h4>6.3.1 Coordinating pipeline stages amidst concurrency</h4>
 
           <div class="img-wrapper">
             <img
@@ -1487,13 +1485,19 @@
           </div>
 
           <p>
-            When we reach the end of the Transcoding stage, we require some sort
-            of event to indicate that we are ready to move to the Merge stage.
-            Generating this event becomes a significant challenge, as the
+            When we first outlined our approach to building Bento’s transcoding
+            pipeline, as we did in section 4.4, we described a three-step
+            process: split, transcode in parallel, then merge.
+          </p>
+
+          <p>
+            However, we reach the end of the Transcoder stage, we require some
+            sort of event to indicate that we are ready to move to the Merge
+            stage. Generating this event becomes a significant challenge, as the
             stateless nature of FaaS containers and the unpredictable timing of
             concurrently executing functions prevents a straightforward approach
             to coordinating the final step. These challenges are explored in
-            detail in section 5.1.
+            detail in section 7.1.
           </p>
 
           <p>
@@ -1503,7 +1507,7 @@
             transcoded.
           </p>
 
-          <h4>5.3.2 Capturing change in state with DynamoDB Streams</h4>
+          <h4>6.3.2 Capturing change in state with DynamoDB Streams</h4>
 
           <p>
             To implement the Merge Invocation stage, we rely on a feature of
@@ -1533,7 +1537,7 @@
             stream, which in turn invokes the Merge Invoker function.
           </p>
 
-          <h4>5.3.3 Invoking the Merge</h4>
+          <h4>6.3.3 Invoking the Merge</h4>
 
           <p>
             The Merge Invoker receives the event from the stream, which contains
@@ -1548,7 +1552,7 @@
             the Merge function.
           </p>
 
-          <h3>5.4 Stage 4 - Merge</h3>
+          <h3>6.4 Stage 4 - Merge</h3>
 
           <h5>Goals:</h5>
 
@@ -1583,7 +1587,7 @@
           <p>
             To avoid storing the final file on disk, we piped Ffmpeg’s byte
             stream output directly to S3 storage. We expand on the challenges of
-            streaming this video data directly to remote storage in section 5.2
+            streaming this video data directly to remote storage in section 7.2
           </p>
 
           <p>
@@ -1601,8 +1605,8 @@
             limited function storage.
           </p>
 
-          <h3>6.1 Pursuing an Event Driven Architecture (EDA)</h3>
-          <h4>6.1.1 What is Event Driven Architecture?</h4>
+          <h3>7.1 Pursuing an Event Driven Architecture (EDA)</h3>
+          <h4>7.1.1 What is Event Driven Architecture?</h4>
 
           <p>
             FaaS functions are event-driven. Therefore, building an application
@@ -1611,7 +1615,7 @@
           </p>
 
           <p>
-            In section 4 of this case study, we refer to specific Lambda
+            In section 6 of this case study, we refer to specific Lambda
             functions being “invoked” by other functions. This is a reasonable,
             but incomplete mental model for the interaction that takes place.
           </p>
@@ -1637,12 +1641,12 @@
             FaaS is able to accomplish in response to incoming events.
           </p>
 
-          <h4>6.1.2 Problem: Tracking the sequence of concurrent events</h4>
+          <h4>7.1.2 Problem: Tracking the sequence of concurrent events</h4>
 
           <p>
             Purely event-driven applications react to internal and external
-            events without a central orchestrator [1]. Instead, execution flow
-            is completely determined by the occurrence of individual events.
+            events without a central orchestrator. Instead, execution flow is
+            completely determined by the occurrence of individual events.
           </p>
 
           <p>
@@ -1705,7 +1709,7 @@
             have been transcoded.
           </p>
 
-          <h4>6.1.3 Problem: Concurrency and race conditions</h4>
+          <h4>7.1.3 Problem: Concurrency and race conditions</h4>
 
           <p>
             By introducing a database to our pipeline, we discovered that
@@ -1763,14 +1767,13 @@
           </div>
 
           <h4>
-            6.1.4 Solution: Change Data Capture in Event Driven Architecture
+            7.1.4 Solution: Change Data Capture in Event Driven Architecture
           </h4>
 
           <p>
             Change data capture refers to a process of identifying and capturing
-            changes made to a database [2]. The process has a wide variety of
-            use cases, from syncing database replicas to driving push
-            notifications.
+            changes made to a database. The process has a wide variety of use
+            cases, from syncing database replicas to driving push notifications.
           </p>
 
           <p>
@@ -1827,7 +1830,7 @@
             />
           </div>
 
-          <h4>5.1.5 Summary</h4>
+          <h4>7.1.5 Summary</h4>
 
           <p>
             While pursuing an event-driven architecture in Bento, we encountered
@@ -1838,9 +1841,9 @@
             management of the pipeline’s flow of execution.
           </p>
 
-          <h3>6.2 Limited function storage</h3>
+          <h3>7.2 Limited function storage</h3>
 
-          <h4>6.2.1 AWS Lambda temporary storage</h4>
+          <h4>7.2.1 AWS Lambda temporary storage</h4>
 
           <p>
             AWS Lambda functions execute in sandboxes, also referred to as
@@ -1866,7 +1869,7 @@
             and what we did to resolve it.
           </p>
 
-          <h4>6.2.2 Problem: Video size limited to 250MB</h4>
+          <h4>7.2.2 Problem: Video size limited to 250MB</h4>
 
           <p>
             In our first implementation, the Merger function retrieved
@@ -1900,7 +1903,7 @@
             possess artifacts from previous function executions.
           </p>
 
-          <h4>6.2.3 Solution: HTTP input</h4>
+          <h4>7.2.3 Solution: HTTP input</h4>
 
           <p>
             The first problem we had to solve was concatenating the video
@@ -1910,7 +1913,7 @@
           </p>
 
           <p>
-            As we describe in section 4.2, FFmpeg accepts file input both
+            As we describe in section 6.2, FFmpeg accepts file input both
             locally and via HTTP. When HTTP is used as an input source, FFmpeg
             retrieves ranges of a video file over HTTP and processes them in
             memory.
@@ -1918,24 +1921,28 @@
 
           <p>
             During the concatenation step of our Merge function, we provide
-            FFmpeg with a list of URLs that point to each segment’s location in
-            S3 storage. FFmpeg processes each remote segment using HTTP input
+            Ffmpeg with a list of URLs that point to each segment’s location in
+            S3 storage. Ffmpeg processes each remote segment using HTTP input
             and joins the segments into a completed video, which is saved to
             temporary local storage.
           </p>
 
           <div class="img-wrapper">
-            <img src="images/diagrams/storage-bottleneck2.png" alt="" />
+            <img
+              src="images/diagrams/storage-bottleneck2.png"
+              alt="Final video in temporary storage before being moved to S3"
+            />
             <p>Final video in temporary storage before being moved to S3</p>
           </div>
 
           <p>
-            With a single file, the complete transcoded video, in temporary
-            storage, our file size ceiling has increased to roughly 512 MB - the
-            local storage limit of the function container.
+            Following the change to HTTP input, we now held a single file, the
+            complete transcoded video, in temporary local storage. Our file size
+            ceiling increased to roughly 512 MB - the local storage limit of the
+            function container.
           </p>
 
-          <h4>6.2.4 Problem: Video size limited to 512 MB - handling output</h4>
+          <h4>7.2.4 Problem: Video size limited to 512 MB - handling output</h4>
 
           <p>
             Doubling our file size capacity is a good start, but 512 MB is
@@ -1955,7 +1962,7 @@
             completed video directly to S3 storage.
           </p>
 
-          <h4>6.2.5 Solution: Piped output and HTTP multipart uploads</h4>
+          <h4>7.2.5 Solution: Piped output and HTTP multipart uploads</h4>
 
           <p>
             We discovered that FFmpeg outputs processed files as a byte stream
@@ -1989,23 +1996,190 @@
             deploy additional libraries and dependencies that are available to
             any Lambda function.
           </p>
-        </div>
-
-        <div class="chapter chp8">
-          <h2 id="results">7 Bento Dashboard</h2>
 
           <p>
-            To easily transcode videos with Bento, we’ve provided a user
-            interface that we call <strong>Bento Dashboard</strong>. Bento
-            Dashboard is built in React with an Express backend that can be run
-            locally for individual use, or deployed to Amazon EC2 for
+            We now had a means of piping Ffmpeg output directly to S3. S3’s
+            support for HTTP multipart uploads enables the final step in this
+            process. Multipart uploads are part of the HTTP protocol. They
+            enable clients to transfer files in chunks that the server can
+            receive in any order. Multipart uploads are the default file
+            transfer protocol for large uploads to S3 via AWS CLI.
+          </p>
+
+          <p>
+            We were now able to take input segments via HTTP, concatenate them
+            in memory, and pipe the completed file directly to S3 as a byte
+            stream, which was transferred in chunks and delivered using HTTP
+            multipart uploads.
+          </p>
+
+          <p>
+            By implementing this process to avoid local Lambda storage, we
+            removed our file size ceiling of 512 MB. The Bento pipeline could
+            now support multi-gigabyte files.
+          </p>
+
+          <h4>7.2.6 Problem: MP4 metadata and writing to remote servers</h4>
+
+          <p>
+            Our transcoded videos now lived in S3 storage. However, when we
+            tested our new files, we ran into playback issues. Some videos would
+            only play for a few seconds in certain media players, while in
+            others they would play in full.
+          </p>
+
+          <p>
+            This issue stemmed from an issue with metadata attached to the
+            transcoded files. MP4 videos have a small bit of metadata written to
+            them, which media players and other video software may use in the
+            course of playback.
+          </p>
+
+          <p>
+            Ordinarily, Ffmpeg writes this metadata to the video at the end of
+            the transcoding process, but it appends it to the beginning of the
+            transcoded file.
+          </p>
+
+          <p>
+            The problems we were experiencing were caused by our output of
+            transcoded files to a remote server. When Ffmpeg concatenates a
+            video file, it does so roughly from beginning to end. This meant
+            that we were transferring the beginning chunks of the completed file
+            to S3 before Ffmpeg had completed its processing.
+          </p>
+
+          <p>
+            When Ffmpeg reached the end of the transcoding process, it tried to
+            seek back to the beginning of the file to write the metadata.
+            However, because the file was not stored locally, Ffmpeg no longer
+            had access to the beginning of the file, and the metadata was not
+            written. As a result, media players that relied on this metadata had
+            playback issues.
+          </p>
+
+          <h4>7.2.7 Solution: Writing empty metadata to MP4 files</h4>
+          <p>
+            To find a solution, we tested whether the mere existence of a
+            metadata object in the video file was the issue, rather than the
+            specific content of the metadata. If simply providing ‘empty’
+            metadata to the video was sufficient for affected media players,
+            then we could resolve the problem.
+          </p>
+
+          <p>
+            Ffmpeg accepts a command to attach empty metadata to the beginning
+            of video files at the start of processing. When our Merge function
+            performs its concatenation step, this command prepends empty
+            metadata to the initial chunk of the completed video before sending
+            the chunk to S3. As a result, Ffmpeg does not try to seek back and
+            update that chunk when concatenation is complete.
+          </p>
+
+          <p>
+            We found that this technique resolved our playback issue. Transcoded
+            videos successfully played across media players.
+          </p>
+          <h4>7.2.8 Summary</h4>
+          <p>
+            In our initial approach to Bento, both the transcoded segments and
+            the final video were stored in a Merger function’s temporary local
+            storage before being moved to S3. This set an effective limit on the
+            size of videos that Bento could transcode to under 200 megabytes.
+          </p>
+
+          <p>
+            Following our changes, transcoded segments are processed in memory
+            via HTTP input. The final video is transferred directly to S3,
+            taking advantage of HTTP multipart uploads. To facilitate this
+            process, we update the typical way that metadata is written to MP4
+            files.
+          </p>
+
+          <p>
+            In aggregate, these improvements raise Bento's maximum supported
+            file size from
+            <strong>under 250 megabytes to over 2 gigabytes</strong>.
+          </p>
+        </div>
+        <div class="chapter chp8">
+          <h2 id="results">8 Bento Deployment</h2>
+
+          <p>
+            <strong>The Bento Pipeline</strong> is deployed straight to an
+            Amazon Web Services account. Once the pipeline is deployed, a user
+            can begin transcoding videos if they are comfortable interacting
+            directly with AWS resources via the AWS CLI or AWS web console. To
+            make Bento simple to use for everyone, we also developed an admin
+            dashboard that users can launch to enjoy all the features of their
+            pipeline with a simple point and click interface. We call this the
+            <strong>Bento Dashboard</strong>.
+          </p>
+          <h3>8.1 Pipeline</h3>
+          <p>
+            Deploying a new pipeline involves creating a number of AWS resources
+            (primarily Lambda functions, DynamoDB tables, and S3 buckets) as
+            well as the various permissions necessary to allow these resources
+            to interact with each other.
+          </p>
+
+          <p>
+            Ordinarily, this can be a lengthy process, especially for those who
+            do not have experience working with AWS. Bento automates and
+            streamlines this process to
+            <a
+              href="https://github.com/bento-video/bento/blob/master/docs/pipeline-deployment-guide.md"
+              target="_blank"
+              >four main steps.</a
+            >
+          </p>
+
+          <p>
+            We used the
+            <a href="https://serverless.com/open-source/" target="_blank"
+              >Serverless framework</a
+            >
+            to enable the creation of all of the AWS resources and most of the
+            necessary configurations with a single command. This open source
+            framework is designed to facilitate serverless application
+            deployment. Serverless follows deployment instructions that are
+            specified within a yaml file.
+          </p>
+          <h3>8.2 Dashboard</h3>
+          <p>
+            The Bento Dashboard ensures users can easily use their pipeline.
+            Bento Dashboard is built in React with an Express backend that can
+            be run locally for individual use, or deployed to Amazon EC2 for
             organizational use.
           </p>
 
           <p>
-            Bento Dashboard enables users to upload locally stored videos to S3
-            for transcoding. Once uploaded, transcoding jobs can be run with a
-            few clicks.
+            Deploying the Dashboard backend is a
+            <a
+              href="https://github.com/bento-video/bento/blob/master/docs/dashboard-deployment-guide.md"
+              target="_blank"
+              >four step process.</a
+            >
+          </p>
+
+          <p>
+            We use Docker to containerize the Express app for easy deployment on
+            EC2 or any other cloud computing platform. Bento users also have the
+            option to deploy on their local machine. The Docker image will
+            ensure the app runs consistently wherever it is deployed.
+          </p>
+
+          <p>
+            The front end of the dashboard is built with React. Bento users that
+            want to share access to their pipeline across a team or organization
+            can follow our instructions to
+            <a
+              href="https://github.com/bento-video/bento/blob/master/docs/dashboard-deployment-guide.md"
+              target="_blank"
+              >deploy the React files on EC2.</a
+            >
+            Otherwise, users have the flexibility to simply run the React app
+            locally.
           </p>
         </div>
 
@@ -2017,19 +2191,21 @@
             we’re excited about.
           </p>
 
-          <h5>Support for HLS and DASH output</h5>
+          <h3>Support for HLS and DASH output</h3>
 
           <p>
             Bento currently supports MP4 output because it is the most widely
-            used and supported video file format in use today. We’d like to add
-            support for HLS and DASH formats, which together represent the most
-            common adaptive bitrate streaming formats. Adaptive bitrate
-            streaming is a technique employed by modern video players that
-            enable on-the-fly quality adjustments to changes in available
-            bandwidth.
+            used and supported video file format in use today.
+          </p>
+          <p>
+            We’d like to add support for HLS and DASH formats, which together
+            represent the most common adaptive bitrate streaming formats.
+            Adaptive bitrate streaming is a technique employed by modern video
+            players that enable on-the-fly quality adjustments to changes in
+            available bandwidth.
           </p>
 
-          <h5>Support for additional video transformation</h5>
+          <h3>Support for additional video transformation</h3>
 
           <p>
             Many businesses perform additional transformations to their videos,
