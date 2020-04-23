@@ -1999,17 +1999,18 @@
 
           <p>
             We now had a means of piping Ffmpeg output directly to S3. S3’s
-            support for HTTP multipart uploads enables the final step in this
-            process. Multipart uploads are part of the HTTP protocol. They
+            support for multipart uploads enables the final step in this
+            process. Multipart uploads are a feature provided by Amazon S3. They
             enable clients to transfer files in chunks that the server can
-            receive in any order. Multipart uploads are the default file
-            transfer protocol for large uploads to S3 via AWS CLI.
+            receive in any order. The chunks are assembled into the full file by
+            the server when the transfer is complete. Multipart uploads are the
+            default file transfer protocol for large uploads to S3 via AWS CLI.
           </p>
 
           <p>
             We were now able to take input segments via HTTP, concatenate them
             in memory, and pipe the completed file directly to S3 as a byte
-            stream, which was transferred in chunks and delivered using HTTP
+            stream, which was transferred in chunks and delivered using
             multipart uploads.
           </p>
 
@@ -2176,7 +2177,7 @@
             <a
               href="https://github.com/bento-video/bento/blob/master/docs/dashboard-deployment-guide.md"
               target="_blank"
-              >deploy the React files on EC2.</a
+              >host the React files on S3.</a
             >
             Otherwise, users have the flexibility to simply run the React app
             locally.
