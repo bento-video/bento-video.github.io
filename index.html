@@ -242,10 +242,10 @@
 
           <p>
             For one, video is ubiquitous. This year, video is projected to make
-            up <i>79% of all internet traffic.</i> With new video-based services
-            and apps launching seemingly every day, video traffic is predicted
-            to grow to over 82% of total internet traffic within the next few
-            years.
+            up <em>79% of all internet traffic.</em> With new video-based
+            services and apps launching seemingly every day, video traffic is
+            predicted to grow to over 82% of total internet traffic within the
+            next few years.
           </p>
 
           <p>
@@ -289,7 +289,7 @@
             When a video is first recorded by a phone or camera, the raw video
             data is too large to store locally, much less send over the web. For
             example, an hour of 1080p 60fps uncompressed video is around
-            <i>1.3 terabytes.</i>
+            <em>1.3 terabytes.</em>
           </p>
 
           <p>
@@ -297,7 +297,7 @@
             the data must be compressed. The software that is used to compress
             this data is called a codec
             <i>(a combination of the words coder and decoder)</i>. A codec
-            applies an algorithm to compress video data, <i>encoding</i> it so
+            applies an algorithm to compress video data, <em>encoding</em> it so
             that it can be easily stored and sent. Once compressed, the data is
             packaged into a file format, called a container. Containers have
             extensions you may have seen, like .mp4 or .mov.
@@ -305,8 +305,8 @@
 
           <p>
             When playing a video this process is reversed. A media player opens
-            the container, and the same codec is used to <i>decode</i> the video
-            data and display it on the device.
+            the container, and the same codec is used to <em>decode</em> the
+            video data and display it on the device.
           </p>
 
           <div class="img-wrapper">
@@ -419,9 +419,9 @@
           </div>
 
           <p>
-            To recap, businesses that deliver video will use a <i>codec</i> to
-            convert their videos into a single <i>container</i> format,
-            compressed to <i>multiple file sizes</i>.
+            To recap, businesses that deliver video will use a <em>codec</em> to
+            convert their videos into a single <em>container</em> format,
+            compressed to <em>multiple file sizes</em>.
           </p>
           <p>
             <strong
@@ -441,9 +441,9 @@
           </p>
 
           <p>
-            First, transcoding large video files takes a <i>very long time</i>.
-            Transcoding a single 60 minute HD video can take anywhere from two
-            to six hours, and sometimes more.
+            First, transcoding large video files takes a
+            <em>very long time</em>. Transcoding a single 60 minute HD video can
+            take anywhere from two to six hours, and sometimes more.
           </p>
 
           <p>
@@ -610,9 +610,9 @@
             <strong>FaaS</strong>.
           </p>
 
-          <h3>2.2 Function as a Service</h3>
+          <h3>3.2 Function as a Service</h3>
 
-          <h4>2.2.1 What is Function as a Service?</h4>
+          <h4>3.2.1 What is Function as a Service?</h4>
 
           <p>
             Function as a Service (FaaS) is similar to BaaS in that both
@@ -635,15 +635,17 @@
             a Service are:
           </p>
 
-          <ol>
+          <ol id="faas-list">
             <li>
               <strong>Code is executed in response to an event:</strong> An
-              event may be an HTTP request from the client, or emitted from a
+              event may be an API request from the client, or emitted from a
               server-side resource.
             </li>
             <li>
-              <strong>The code is run within ephemeral containers:</strong>
-              These containers are spun up to execute code in response to an
+              <strong
+                >The code is run within ephemeral compute containers:</strong
+              >
+              Compute containers are spun up to execute code in response to an
               event, and immediately destroyed once all incoming events have
               been processed. This is a significant distinction from traditional
               web servers, which are intended to run persistently whether or not
@@ -651,11 +653,11 @@
             </li>
             <li>
               <strong
-                >Containers automatically scale in response to incoming
+                >Containers <em>automatically</em> scale in response to incoming
                 load:</strong
               >
-              The number of containers that are executing code will increase or
-              decrease to meet the load of incoming events.
+              The number of compute containers that are executing code will
+              increase or decrease to meet the load of incoming events.
             </li>
             <li>
               <strong
@@ -686,12 +688,12 @@
             Cloud computing services like Amazon Web Services, Google Cloud
             Platform, and Microsoft Azure offer their own FaaS platforms (AWS
             Lambda, Cloud Functions, and Azure Functions, respectively). These
-            providers provision the necessary application environment and
-            computing resources to run the provided code, as well as scaling the
-            execution of the function as needed.
+            platforms provision the necessary application environment and
+            computing resources to run the provided code, and handle the scaling
+            of function instances as needed.
           </p>
 
-          <h4>2.2.2 The benefits of FaaS</h4>
+          <h4>3.2.2 The benefits of Function as a Service</h4>
 
           <div class="img-wrapper">
             <img
@@ -739,7 +741,7 @@
             let’s consider the tradeoffs of building with FaaS.
           </p>
 
-          <h4>2.2.3 The limitations of Function as a Service</h4>
+          <h4>3.2.3 The limitations of Function as a Service</h4>
 
           <p>
             Function as a Service also presents drawbacks and challenges in
@@ -777,19 +779,19 @@
           </p>
 
           <p>
-            On the other end of the spectrum are solutions like Backend as a
-            Service, which abstract away server-side implementation entirely and
-            simply provide an API to interact with the service. At this end,
-            most choices are made by the providers of the service - developers
-            have little, if any, control over implementation details.
+            On the other end of the abstraction spectrum are solutions like
+            Backend as a Service, which abstract away server-side implementation
+            entirely and simply provide an API to interact with the service. At
+            this end, most choices are made by the providers of the service -
+            developers have little, if any, control over implementation details.
           </p>
 
           <p>
             Function as a Service sits closer to this end of the abstraction
             spectrum. Most infrastructure details are abstracted away. FaaS
-            platforms provide limited options around container resources and
-            runtime environment, but control is largely moved from the
-            application developer to the platform.
+            platforms provide limited options around the resources and runtime
+            environment provided to compute containers, but control is largely
+            moved from the application developer to the platform.
           </p>
 
           <p>
@@ -814,12 +816,13 @@
             storage does not persist between executions on the same container.
             In addition, because developers have no insight or control around
             which container is created in response to a given event, there is no
-            way to directly pass state between specific FaaS containers.
+            way to directly pass state between <em>specific</em> FaaS
+            containers.
           </p>
 
           <p>
-            We discuss how Bento approached and resolved this limitation later
-            in the case study.
+            We discuss how Bento approached and resolved this limitation in
+            section 6.1 of this case study.
           </p>
 
           <h5>Execution Duration</h5>
@@ -859,9 +862,15 @@
           </p>
         </div>
         <div class="chapter chp4">
-          <h2 id="building">3 Building Bento</h2>
+          <h2 id="building">4 Building Bento</h2>
 
-          <h3>3.1 Design goals</h3>
+          <h3>4.1 Design goals</h3>
+          <div class="img-wrapper">
+            <img
+              src="images/diagrams/bento-design-goals.png"
+              alt="Bento is designed for speed and ease of use"
+            />
+          </div>
 
           <h5>Speed</h5>
 
@@ -879,8 +888,8 @@
             and adjustments that can be made to videos during the transcoding
             process. However, many individuals and businesses tend to have a
             simple set of requirements around format and resolution. We built
-            Bento to be simple to use. After deployment, uploading and
-            transcoding a video is possible with a few clicks.
+            Bento to be <strong>simple to use</strong>. After deployment,
+            uploading and transcoding a video is possible with a few clicks.
           </p>
 
           <h5>Private and open source</h5>
@@ -920,18 +929,25 @@
 
           <p>The Bento pipeline currently supports</p>
           <ul>
-            <li>Up to 2 hours of 1080p HD input</li>
-            <li>Up to 30 minutes of 4K UHD input</li>
             <li>
-              Bento supports any input video that uses the h264 codec. This
-              includes MP4, MOV, MKV, 3GP, and TS
+              <strong>Up to 2 hours</strong> of <strong>1080p HD</strong> input
+            </li>
+            <li>
+              <strong>Up to 30 minutes</strong> of <strong>4K UHD</strong> input
+            </li>
+            <li>Video files up to 2 GB in size</li>
+            <li>
+              Bento supports any input video that uses the h264 codec.
+              <ul>
+                <li>This includes MP4, MOV, MKV, 3GP, and TS</li>
+              </ul>
             </li>
             <li>
               Bento outputs MP4 video at 4k, 1080p, 720p, and 360p resolution
             </li>
           </ul>
 
-          <h3>3.2 Design tradeoffs</h3>
+          <h3>4.2 Design tradeoffs</h3>
 
           <h5>Optimizations for file size and output quality</h5>
 
@@ -943,13 +959,27 @@
 
           <h5>Cost for high-volume businesses</h5>
 
-          <!-- SECTION BEING EDITED, REVISIT -->
-
-          <h3>3.3 Tools</h3>
           <p>
-            The FaaS provider that we chose for Bento is AWS Lambda. AWS Lambda
-            is currently the most widely used FaaS platform, and provides the
-            highest limits on configuration details like timeout and memory.
+            The cost of compute/second on a Function as a Service platform is
+            higher than a long-lived virtual server. For businesses with
+            intermittent transcoding demands, this higher cost is offset by not
+            However, video platforms and media businesses that have enough
+            content to spend their full time transcoding would not see a cost
+            advantage with Bento.
+          </p>
+
+          <p>
+            However, video platforms and media businesses that have enough
+            content to spend their full time transcoding would not see a cost
+            advantage with Bento.
+          </p>
+
+          <h3>4.3 Tools</h3>
+          <p>
+            The FaaS provider that we chose for Bento is
+            <strong>AWS Lambda</strong>. AWS Lambda is currently the most widely
+            used FaaS platform, and provides the highest limits on configuration
+            details like timeout and memory.
           </p>
 
           <p>
@@ -957,30 +987,34 @@
           </p>
 
           <ul>
-            <li>Amazon S3 is used for storing video files.</li>
+            <li><strong>Amazon S3</strong> is used for storing video files.</li>
             <li>
-              Amazon DynamoDB is used to track state within our pipeline as well
-              as storing information about users' videos.
+              <strong>Amazon DynamoDB</strong> is used to track state within our
+              pipeline as well as storing information about users' videos.
             </li>
-            <li>Amazon EC2 is used to host Bento’s admin dashboard</li>
+            <li>
+              <strong>Amazon EC2</strong> is used to host Bento’s admin
+              dashboard
+            </li>
           </ul>
 
           <p>
-            Within our Transcoding Lambdas we are using FFmpeg as our
-            transcoding software. FFmpeg is free, open-source software that can
-            perform a vast number of operations on media files. We use FFmpeg
-            for the transcoding stage and take advantage of a few convenient
-            tools that it provides elsewhere in the pipeline.
+            Within our Transcoding Lambdas we are using
+            <strong>FFmpeg</strong> as our transcoding software. FFmpeg is free,
+            open-source software that can perform a vast number of operations on
+            media files. We use FFmpeg for the transcoding stage and take
+            advantage of a few convenient tools that it provides elsewhere in
+            the pipeline.
           </p>
 
-          <h3>3.4 Approach</h3>
+          <h3>4.4 Approach</h3>
 
           <p>
             Our approach was to send a video file through a pipeline of
             functions that execute the following steps:
           </p>
 
-          <ol>
+          <ol id="approach-list">
             <li>Divide the video file into <em>n</em> segments.</li>
             <li>
               Use <em>n</em> number of Lambda functions, working in parallel, to
@@ -998,7 +1032,7 @@
             crucial step.
           </p>
 
-          <h4>3.4.1 Instant automated scaling</h4>
+          <h4>4.4.1 Instant automated scaling</h4>
 
           <p>
             Transcoding a video file creates demand on the CPU and memory of the
@@ -1065,7 +1099,7 @@
             />
           </div>
 
-          <h4>3.4.2 The power of concurrent processing</h4>
+          <h4>4.4.2 The power of concurrent processing</h4>
 
           <p>
             Bento relies on the ability to execute functions concurrently in
@@ -1135,7 +1169,7 @@
           </p>
         </div>
         <div class="chapter chp5">
-          <h2 id="results">4 Benchmarking Bento</h2>
+          <h2 id="results">5 Benchmarking Bento</h2>
 
           <p>
             We benchmarked Bento against two options that individuals and small
@@ -1148,7 +1182,7 @@
 
           <p>
             The first alternative is a free-tier EC2 instance with 1 GB of RAM,
-            running Ffmpeg. While this is a barebones option for professionals,
+            running FFmpeg. While this is a barebones option for professionals,
             it represents a clear baseline to benchmark Bento’s performance
             against traditional, non-optimized video encoding on a single
             machine.
@@ -1336,7 +1370,7 @@
           </p>
 
           <p>
-            Within the Executor, we use another Ffmpeg utility, Ffprobe, to
+            Within the Executor, we use another FFmpeg utility, Ffprobe, to
             examine the video and collect metadata about the video’s keyframes
             and timestamps. The Executor function uses this information to
             determine the start and end times of each segment.
@@ -1389,7 +1423,7 @@
           <p>
             Because AWS Lambda functions have limited temporary local storage,
             we quickly realized that we needed to transcode the original video
-            file without saving it to disk. Fortunately, Ffmpeg accepts input
+            file without saving it to disk. Fortunately, FFmpeg accepts input
             over HTTP, allowing us to process the video in memory and bypass the
             need to store the full file locally. We expand on the challenges of
             storing and processing large video files in a FaaS architecture in
@@ -1398,8 +1432,8 @@
 
           <p>
             To transcode a segment of the video, we pass the URL of the original
-            video file to Ffmpeg, along with the desired transcoding settings,
-            and the start and end times of the segment. Ffmpeg uses the h264
+            video file to FFmpeg, along with the desired transcoding settings,
+            and the start and end times of the segment. FFmpeg uses the h264
             codec to transcode the video segment and packages it in the MP4
             container.
           </p>
@@ -1526,7 +1560,7 @@
             When the Merge function is invoked, all transcoded segments are
             available in intermediate S3 storage to be merged into the final
             file. To merge these videos together, we use the ffconcat utility
-            provided by Ffmpeg, which concatenates multiple input files into a
+            provided by FFmpeg, which concatenates multiple input files into a
             single output file.
           </p>
 
@@ -1837,7 +1871,7 @@
           <p>
             In our first implementation, the Merger function retrieved
             transcoded video segments from S3 and saved them to the instance’s
-            temporary local storage. Ffmpeg concatenated these segments into a
+            temporary local storage. FFmpeg concatenated these segments into a
             complete video and stored the output file in the same local storage.
           </p>
 
@@ -1876,16 +1910,16 @@
           </p>
 
           <p>
-            As we describe in section 4.2, Ffmpeg accepts file input both
-            locally and via HTTP. When HTTP is used as an input source, Ffmpeg
+            As we describe in section 4.2, FFmpeg accepts file input both
+            locally and via HTTP. When HTTP is used as an input source, FFmpeg
             retrieves ranges of a video file over HTTP and processes them in
             memory.
           </p>
 
           <p>
             During the concatenation step of our Merge function, we provide
-            Ffmpeg with a list of URLs that point to each segment’s location in
-            S3 storage. Ffmpeg processes each remote segment using HTTP input
+            FFmpeg with a list of URLs that point to each segment’s location in
+            S3 storage. FFmpeg processes each remote segment using HTTP input
             and joins the segments into a completed video, which is saved to
             temporary local storage.
           </p>
@@ -1910,22 +1944,22 @@
           </p>
 
           <p>
-            By default, Ffmpeg outputs processed videos to local storage. Our
+            By default, FFmpeg outputs processed videos to local storage. Our
             challenge was now developing a function that would accept input over
             HTTP, concatenate files in memory, and output the result to a remote
             server.
           </p>
 
           <p>
-            We explored whether it was possible to have Ffmpeg output a
+            We explored whether it was possible to have FFmpeg output a
             completed video directly to S3 storage.
           </p>
 
           <h4>6.2.5 Solution: Piped output and HTTP multipart uploads</h4>
 
           <p>
-            We discovered that Ffmpeg outputs processed files as a byte stream
-            that can be directly accessed via the Ffmpeg process’ stdout.
+            We discovered that FFmpeg outputs processed files as a byte stream
+            that can be directly accessed via the FFmpeg process’ stdout.
             Ordinarily, this byte stream is written to a local file. However,
             using native bash commands, we can pipe this output to any other
             stdin.
@@ -1937,7 +1971,7 @@
               alt="Multipart upload to S3"
               class="softened"
             />
-            <p>Ffmpeg output piped as a byte stream to S3</p>
+            <p>FFmpeg output piped as a byte stream to S3</p>
           </div>
 
           <p>

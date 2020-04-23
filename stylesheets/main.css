@@ -177,11 +177,11 @@ h4 {
 }
 
 .try-redpoint:hover {
-  color: #ed7164 !important;   /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  color: #ed7164 !important; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
   border: 1.5px solid #ed7164;
 }
 
-main>section {
+main > section {
   margin: 80px 0 100px 0;
   width: 90%;
   max-width: 1400px;
@@ -236,7 +236,7 @@ img {
 #bento-logo {
   font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
-  color: #ed7164;                     /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  color: #ed7164; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
   cursor: pointer;
   width: 50px;
   position: fixed;
@@ -246,7 +246,7 @@ img {
 }
 
 #bento-logo img {
-  width: 50px;                      /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  width: 50px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
 }
 
 #github-logo {
@@ -284,16 +284,17 @@ img {
 }
 
 #root-proxy-path {
-  width: 300px;                 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  width: 300px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
 }
 
-#flowchart {                  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+#flowchart {
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
   width: 600px;
 }
 
 #table-state {
   height: 282px;
-  max-height: 282px;                  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  max-height: 282px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
   width: auto;
 }
 
@@ -303,9 +304,11 @@ img {
 
 ------------------------------------ */
 
-@font-face {                          /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+@font-face {
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
   font-family: "Fira Code";
-  src: url(https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/woff2/FiraCode-Regular.woff2) format("truetype");
+  src: url(https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/woff2/FiraCode-Regular.woff2)
+    format("truetype");
 }
 
 .container {
@@ -343,7 +346,7 @@ code.gruvbox-code {
 
 nav#site-navigation {
   display: none;
-  position: fixed;            
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 2;
@@ -569,7 +572,6 @@ hr {
   width: 60px;
 }
 
-
 #case-study .img-wrapper p {
   color: #a0aab5;
   font-size: 100%;
@@ -679,6 +681,19 @@ hr {
 
 /* ---------------------------------
 
+            custom
+
+------------------------------------ */
+#faas-list li,
+#approach-list li {
+  margin-bottom: 1em;
+}
+
+ul li {
+  margin-bottom: 0.8em;
+}
+/* ---------------------------------
+
             footnotes
 
 ------------------------------------ */
@@ -756,7 +771,7 @@ h2#references {
   line-height: 4rem;
 }
 
-#our-team>p {
+#our-team > p {
   font-size: 1.2rem;
   line-height: 1.7rem;
   margin-top: 30px;
@@ -765,7 +780,7 @@ h2#references {
   width: 45%;
 }
 
-#our-team>ul {
+#our-team > ul {
   padding: 60px 0 80px;
   text-align: center;
 }
@@ -787,7 +802,7 @@ h2#references {
   text-decoration: none;
 }
 
-#our-team li>img {
+#our-team li > img {
   border-radius: 100%;
   margin: 0 auto 20px;
   width: 15vw;
@@ -912,7 +927,7 @@ small {
     overflow: scroll;
   }
 
-  nav#site-navigation>ul {
+  nav#site-navigation > ul {
     margin-top: 50px;
     padding-bottom: 50px;
   }
@@ -973,7 +988,7 @@ small {
     margin: 0;
   }
 
-  #our-team>p {
+  #our-team > p {
     width: 60%;
   }
 
@@ -993,7 +1008,6 @@ small {
 }
 
 @media (max-width: 800px) {
-
   /* General */
   h1 {
     font-size: 3.5rem;
@@ -1081,7 +1095,7 @@ small {
 
   /* Our Team */
 
-  #our-team>p {
+  #our-team > p {
     width: 70%;
   }
 
@@ -1095,7 +1109,6 @@ small {
 }
 
 @media (max-width: 600px) {
-
   /* General */
   #case-study .img-wrapper img.big,
   img.medium {
@@ -1161,12 +1174,12 @@ small {
     padding-top: 60px;
   }
 
-  #our-team>p {
+  #our-team > p {
     font-size: 1rem;
     margin-top: 0;
   }
 
-  #our-team>ul {
+  #our-team > ul {
     margin-top: 0;
     padding: 0;
   }
@@ -1200,7 +1213,7 @@ small {
     padding: 3px;
   }
 
-  #our-team li>img {
+  #our-team li > img {
     width: 30vw;
   }
 }
@@ -1232,7 +1245,7 @@ small {
     padding: 2px;
   }
 
-  #our-team li>img {
+  #our-team li > img {
     width: 35vw;
   }
 
@@ -1320,7 +1333,7 @@ small {
     font-size: 1.1rem;
   }
 
-  nav#site-navigation>ul {
+  nav#site-navigation > ul {
     margin-top: 20px;
     padding-bottom: 25px;
   }
@@ -1341,7 +1354,7 @@ small {
     padding-bottom: 18px;
   }
 
-  #our-team>p {
+  #our-team > p {
     width: 57%;
   }
 }
@@ -1353,13 +1366,10 @@ small {
 ------------------------------------ */
 
 @media (max-height: 815px) {
-
   #side-nav img {
     display: none;
   }
-
 }
-
 
 @media (max-height: 500px) {
   header {
