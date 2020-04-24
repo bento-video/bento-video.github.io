@@ -1,105 +1,6 @@
 /* global document, window, hljs, $ */
 
-// $(function () {
-//   const $nextButton = $("#nextButton");
-//   const $resetButton = $("#resetButton");
-//   const image = document.getElementById("hidden-state");
-//   const $image = $("#hidden-state");
-
-//   $nextButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     image.src = "images/diagrams/slides/hidden_state/slide_2.png";
-//     $image
-//       .nextAll("p")
-//       .text("Typo is fixed, and cell is run again, resulting in an error");
-//     $nextButton.css("visibility", "hidden");
-//   });
-
-//   $resetButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     $nextButton.css("visibility", "visible");
-//     image.src = "images/diagrams/slides/hidden_state/slide_1.png";
-//     $image.nextAll("p").text("Cell is executed with a typo");
-//   });
-// });
-
-// $(function () {
-//   const $nextButton = $("#nextButton2");
-//   const $resetButton = $("#resetButton2");
-
-//   const image = document.getElementById("mutate-clone");
-//   const $image = $("#mutate-clone");
-
-//   $nextButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     image.src = "images/diagrams/system_architecture/not_mutating_clone.png";
-//     $image
-//       .nextAll("p")
-//       .text(
-//         "Using a flag on a cloned notebook, we can create a new ID so the original is not overwritten"
-//       );
-//     $nextButton.css("visibility", "hidden");
-//   });
-
-//   $resetButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     $nextButton.css("visibility", "visible");
-//     image.src = "images/diagrams/system_architecture/mutating_clone.png";
-//     $image
-//       .nextAll("p")
-//       .text(
-//         "Without a way to flag a cloned notebook, subsequent saves will mutate the original"
-//       );
-//   });
-// });
-
-// $(function () {
-//   const $nextButton = $("#nextButton3");
-//   const $resetButton = $("#resetButton3");
-
-//   const image = document.getElementById("create-session");
-//   const $image = $("#create-session");
-
-//   $nextButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     if (image.src.match("1")) {
-//       image.src = "images/diagrams/system_architecture/create_session_2.png";
-//       $image
-//         .nextAll("p")
-//         .text(
-//           "Next, the dispatch server creates a container and associates the container's ID with the session"
-//         );
-//     } else if (image.src.match("2")) {
-//       image.src = "images/diagrams/system_architecture/create_session_3.png";
-//       $image
-//         .nextAll("p")
-//         .text(
-//           "Finally, when the client sends a request to their unique URL, the dispatch server proxies the request to the correct container using the session data"
-//         );
-//       $nextButton.css("visibility", "hidden");
-//     }
-//   });
-
-//   $resetButton.on("click", function (e) {
-//     e.preventDefault();
-
-//     $nextButton.css("visibility", "visible");
-//     image.src = "images/diagrams/system_architecture/create_session_1.png";
-//     $image
-//       .nextAll("p")
-//       .text(
-//         "First, a unique URL is created and stored in session data. The client will be redirected to this URL once a container is ready"
-//       );
-//   });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
-  //   //const redpointLogo = document.querySelector("#redpoint-logo");
   //   const nav = document.querySelector("nav");
   //   const navLinks = document.querySelectorAll("#site-navigation a");
   const main = document.querySelector("main");
@@ -197,25 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //     mobileCaseStudyNavUl.appendChild(li2);
   //   });
 
-  //   // Add Try RedPoint Link
-  //   const listItem = document.createElement("li");
-  //   const tryRedPointLink = document.createElement("a");
-  //   tryRedPointLink.href =
-  //     "https://www.redpointnotebooks.com/notebooks/83fdb367-4cca-4f35-a935-02ca4b042007";
-  //   tryRedPointLink.textContent = "TRY DEMO NOTEBOOK";
-  //   tryRedPointLink.className = "try-redpoint";
-  //   tryRedPointLink.setAttribute("target", "_blank");
-  //   listItem.appendChild(tryRedPointLink);
-  //   caseStudyNavUl.appendChild(listItem);
-
   //   // changeImgSrc(`${logo}-logo`, logoUrls[`${logo}Black`]);
   //   const changeImgSrc = (tag, url) => {
   //     document.querySelector(`#${tag}`).src = url;
-  //   };
-
-  //   const logoUrls = {
-  //     githubWhite: "./images/github/github_white.png",
-  //     githubBlack: "./images/github/github_black.png"
   //   };
 
   //   const isOnHeader = logo => {
@@ -321,48 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //       $toTop.stop(true, true).css("display", "none");
     //     }
     //   };
-
-    //   const styleNavColors = (bgColor, textColor, hoverColor) => {
-    //     nav.style.backgroundColor = bgColor;
-    //     const links = Array.prototype.slice
-    //       .call(navLinks)
-    //       .concat(mobileCaseStudyLinks);
-    //     links.forEach(link => {
-    //       link.style.color = textColor;
-
-    //       link.addEventListener("mouseenter", () => {
-    //         link.style.color = hoverColor;
-    //       });
-
-    //       link.addEventListener("mouseleave", () => {
-    //         link.style.color = textColor;
-    //       });
-    //     });
   };
-
-  //   const handleNavColors = () => {
-  //     const onHeader = isOnHeader("redpoint");
-  //     const onTeam = isOnTeamSection("redpoint");
-  //     const onMain = !(onHeader || onTeam);
-  //     const isWideScreen = !isNarrowScreen();
-
-  //     if (isWideScreen && !onMain && topNavVisible) {
-  //       // BG, text, hover
-  //       // styleNavColors("#1e4470", "#edf5e1", "#ed7164");
-  //       styleNavColors("#353a40", "#a0aab5", "#ed7164");
-  //       changeImgSrc(
-  //         "redpoint-logo",
-  //         "images/logos/redpoint-brand-logo_plane-only.png"
-  //       ); // black
-  //     } else {
-  //       // styleNavColors("#1e4470", "#edf5e1", "#ed7164");
-  //       styleNavColors("#353a40", "#a0aab5", "#ed7164");
-  //       changeImgSrc(
-  //         "redpoint-logo",
-  //         "images/logos/redpoint-brand-logo_plane-only.png"
-  //       );
-  //     }
-  //   };
 
   //   const showNav = () => {
   //     const position = getScrollPosition();
@@ -415,7 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //     }
   //   };
 
-  //   redpointLogo.addEventListener("click", handleNavDisplay);
   //   main.addEventListener("mouseenter", hideNav);
   //   ourTeam.addEventListener("mouseenter", hideNav);
   //   header.addEventListener("mouseenter", hideNav);
