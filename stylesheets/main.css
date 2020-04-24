@@ -295,7 +295,7 @@ img {
 }
 
 video {
-  width: 500px;
+  width: 100%;
 }
 /* ---------------------------------
 
@@ -1287,6 +1287,13 @@ small {
   .integration-wrapper {
     flex-wrap: wrap;
   }
+
+/*   .integration:first-of-type {
+    background: #fff;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  } */
 
   #bento-logo {
     width: 28px;
