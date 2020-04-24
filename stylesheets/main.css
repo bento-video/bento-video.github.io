@@ -76,10 +76,6 @@ h4 {
   width: 100%;
 }
 
-/* .integration p {
-  color: #02576c;
-} */
-
 #api-webhook-support {
   align-self: center;
   width: 100%;
@@ -90,8 +86,6 @@ h4 {
 }
 
 .integration:first-of-type {
-  /* background: #27a87f;
-  color: #fff; */
   background: #cff52a;
   color: #02576c;
   padding-top: 20px;
@@ -171,17 +165,6 @@ h4 {
 
 .button:hover {
   background: #fff;
-}
-
-.try-redpoint {
-  border: 1.5px solid #a0aab5; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
-  padding: 6px;
-  border-radius: 5px;
-}
-
-.try-redpoint:hover {
-  color: #ed7164 !important; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
-  border: 1.5px solid #ed7164;
 }
 
 main > section {
@@ -285,32 +268,32 @@ img {
   height: auto;
 }
 
-#root-proxy-path {
-  width: 300px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+/* #root-proxy-path {
+  width: 300px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
 }
 
 #flowchart {
-  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
   width: 600px;
 }
 
 #table-state {
   height: 282px;
-  max-height: 282px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  max-height: 282px; /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
   width: auto;
 }
 
 video {
   width: 500px;
-}
+} */
 /* ---------------------------------
 
                code                           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC??
 
 ------------------------------------ */
-
+/* 
 @font-face {
-  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?? */
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!ATTENTION. REDPOINT SPECIFIC?
   font-family: "Fira Code";
   src: url(https://cdn.jsdelivr.net/npm/firacode@1.205.0/distr/woff2/FiraCode-Regular.woff2)
     format("truetype");
@@ -341,7 +324,7 @@ code.gruvbox-code {
   border: 15px solid #282828;
   border-radius: 1rem;
   padding: 0.5vh 1vw;
-}
+} */
 
 /* ---------------------------------
 
@@ -459,17 +442,12 @@ ul#nav-links {
   margin-bottom: 2vh;
 }
 
-/* #case-study nav li:first-of-type {
-  margin-top: 150px;
-} */
-
 ul#nav-links {
   margin-top: 50px;
 }
 
 #case-study nav a {
   color: #999;
-  /* color: var(--bento-blue); */
   font-size: 1.2rem;
   margin-left: 1rem;
   text-decoration: none;
