@@ -13,6 +13,13 @@
   --bento-darkgray: #495057;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: #fff;
   color: #282828;
@@ -76,10 +83,6 @@ h4 {
   width: 100%;
 }
 
-/* .integration p {
-  color: #02576c;
-} */
-
 #api-webhook-support {
   align-self: center;
   width: 100%;
@@ -90,8 +93,6 @@ h4 {
 }
 
 .integration:first-of-type {
-  /* background: #27a87f;
-  color: #fff; */
   background: #cff52a;
   color: #02576c;
   padding-top: 20px;
@@ -301,7 +302,7 @@ img {
 }
 
 video {
-  width: 500px;
+  width: 100%;
 }
 /* ---------------------------------
 
@@ -459,17 +460,12 @@ ul#nav-links {
   margin-bottom: 2vh;
 }
 
-/* #case-study nav li:first-of-type {
-  margin-top: 150px;
-} */
-
 ul#nav-links {
   margin-top: 50px;
 }
 
 #case-study nav a {
   color: #999;
-  /* color: var(--bento-blue); */
   font-size: 1.2rem;
   margin-left: 1rem;
   text-decoration: none;
@@ -1045,7 +1041,7 @@ small {
 
   #github-logo {
     cursor: pointer;
-    width: 30px;
+    width: 40px;
     position: fixed;
     bottom: 75px;
     right: 20px;
@@ -1298,6 +1294,13 @@ small {
   .integration-wrapper {
     flex-wrap: wrap;
   }
+
+/*   .integration:first-of-type {
+    background: #fff;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  } */
 
   #bento-logo {
     width: 28px;
